@@ -6,7 +6,7 @@
 }
 
 body {
-  @apply text-zinc-500 bg-zinc-900 font-normal text-base relative overflow-x-hidden min-w-[320px];
+  @apply text-zinc-500 bg-zinc-900;
   font-family: var(--font-family-sans);
 }
 
@@ -19,13 +19,6 @@ h2 {
 
 a {
   @apply font-medium text-zinc-400 hover:underline decoration-red-700 hover:text-zinc-300 transition-all;
-}
-
-.bg-header-image {
-  background-image: url('../images/ice.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .column {

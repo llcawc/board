@@ -3,7 +3,7 @@
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
 const distDir = 'dist' // Distribution folder for uploading to the site
-const fileswatch = 'html,htm,hbs,php,txt,js,mjs,jpg,png,svg,json,md,woff2' // List of files extensions for watching & hard reload (comma separated)
+const fileswatch = 'html,htm,njk,hbs,php,txt,js,mjs,jpg,png,svg,json,md,woff2' // List of files extensions for watching & hard reload (comma separated)
 
 // import modules
 import gulp from 'gulp'
@@ -19,7 +19,7 @@ import { clean, assetscopy } from './gulp/assets.mjs'
 //  server reload task
 function browserSync() {
   browsersync.init({
-    // files: [distDir + '/**/*'],
+    files: [distDir + '/**/*'],
     watch: true,
     notify: false,
     server: { baseDir: distDir },
@@ -30,7 +30,7 @@ function browserSync() {
 
 // watch task
 function watchDev() {
-  watch(`./${baseDir}/**/*.{html,hbs,htm}`, { usePolling: true }, series(html, styles))
+  watch(`./${baseDir}/**/*.{html,htm,njk,hbs}`, { usePolling: true }, series(html, styles))
   watch(`./${baseDir}/assets/js/**/*.{js,mjs,cjs}`, { usePolling: true }, scripts)
   watch(`./${baseDir}/assets/css/**/*.{css,scss}`, { usePolling: true }, styles)
   watch(`./${baseDir}/assets/img/**/*.{jpg,png,svg}`, { usePolling: true }, images)

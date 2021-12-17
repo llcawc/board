@@ -1,0 +1,13 @@
+// main.postcss
+// used postcss plagins for import, nesting and comments
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// load fonts
+@import '../fonts/Inter/inter.css';
+@import '../fonts/JetBrains/jetbrains.css';
+
+// user other custom styles
+@import 'custom.css';

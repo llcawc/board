@@ -1,0 +1,14 @@
+<header class="bg-header-image flex items-center">
+  <div class="container px-4 mx-auto text-center text-white">
+    <h1 id="hdr" class="drop-shadow">{{ pageheader }}</h1>
+    <nav class="drop-shadow hover:text-white">
+      <ul class="flex justify-center space-x-2">
+        <li><a class="text-white hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4 hover:decoration-red-600 {{#ifpage 'index' }} font-black underline underline-offset-4 decoration-4 decoration-red-500 {{/ifpage }}"  href="/">Home</a></li>
+        <li>•</li>
+        <li><a class="text-white hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4 hover:decoration-red-600 {{#ifpage 'post' }} font-black underline underline-offset-4 decoration-4 decoration-red-500 {{/ifpage }}"  href="post.html">Post</a></li>
+        <li>•</li>
+        <li><a class="text-white hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4 hover:decoration-red-600" href="404.html">Error</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

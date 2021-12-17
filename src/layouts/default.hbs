@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <meta property="og:image" content="assets/images/ice.jpg">
+  <link rel="stylesheet" href="assets/css/main.min.css">
+</head>
+
+<body>
+  {{#unlesspage '404'}}
+  <div class="h-screen grid grid-cols-1 grid-rows-[10rem_auto_5rem]">
+    {{> header}}
+    {{/unlesspage}}
+    {{> body}}
+    {{#unlesspage '404'}}
+    {{> footer}}
+  </div>
+  <script src="assets/js/main.min.js"></script>
+  {{/unlesspage}}
+</body>
+
+</html>

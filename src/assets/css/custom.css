@@ -1,0 +1,38 @@
+// custom.postcss
+
+:root {
+  --font-family-sans: pasInter, sans-serif;
+  --font-family-mono: pasJetBrainsMono, monospace;
+}
+
+body {
+  @apply text-zinc-500 bg-zinc-900 font-normal text-base relative overflow-x-hidden min-w-[320px];
+  font-family: var(--font-family-sans);
+}
+
+h1 {
+  @apply text-4xl mb-4 font-semibold;
+}
+h2 {
+  @apply text-3xl mb-4 font-semibold;
+}
+
+a {
+  @apply font-medium text-zinc-400 hover:underline decoration-red-700 hover:text-zinc-300 transition-all;
+}
+
+.bg-header-image {
+  background-image: url('../images/ice.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.column {
+  column-count: 1;
+  column-gap: 2rem;
+  @media (min-width: 640px) {
+    column-count: auto;
+    column-width: 20rem;
+  }
+}

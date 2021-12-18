@@ -3,7 +3,7 @@
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
 const distDir = 'dist' // Distribution folder for uploading to the site
-const fileswatch = 'html,htm,njk,hbs,php,txt,js,mjs,jpg,png,svg,json,md,woff2' // List of files extensions for watching & hard reload (comma separated)
+const fileswatch = 'html,htm,njk,hbs,php,txt,js,mjs,jpg,png,svg,json,md,woff2'
 
 // import modules
 import gulp from 'gulp'
@@ -23,8 +23,8 @@ function browserSync() {
     watch: true,
     notify: false,
     server: { baseDir: distDir },
-    online: false, // If «false» - Browsersync will work offline without internet connection
-    browser: ['firefox'], // open in firefox
+    online: false,
+    browser: ['firefox'], // or 'chrome', 'edge', 'opera'
   })
 }
 

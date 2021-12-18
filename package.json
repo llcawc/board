@@ -2,9 +2,9 @@
   "name": "board",
   "version": "0.0.1",
   "date": "2021.12.15",
-  "homepage": "https://github.com/llcawc",
   "license": "ISC",
   "author": "pasmurno by llcawc",
+  "homepage": "https://github.com/llcawc",
   "description": "board starter template by pasmurno",
   "repository": {
     "type": "git",

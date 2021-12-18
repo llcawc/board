@@ -24,7 +24,7 @@ function browserSync() {
     notify: false,
     server: { baseDir: distDir },
     online: false,
-    browser: ['firefox'], // or 'chrome', 'edge', 'opera'
+    browser: ['firefox'], // or 'chrome', 'msedge', 'opera'
   })
 }
 

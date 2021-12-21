@@ -3,18 +3,18 @@
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
 const distDir = 'dist' // Distribution folder for uploading to the site
-const fileswatch = 'html,htm,njk,hbs,php,txt,js,mjs,jpg,png,svg,json,md,woff2'
+const fileswatch = 'html,htm,njk,hbs,php,txt,js,cjs,mjs,jpg,png,svg,json,md,woff2'
 
 // import modules
 import gulp from 'gulp'
 const { parallel, series, watch } = gulp
 import browsersync from 'browser-sync'
-import { html, htmlmin } from './gulp/html.mjs'
-import { deploy } from './gulp/deploy.mjs'
-import { images } from './gulp/images.mjs'
-import { scripts } from './gulp/scripts.mjs'
-import { styles } from './gulp/styles.mjs'
-import { clean, assetscopy } from './gulp/assets.mjs'
+import { html, htmlmin } from './gulp/html.js'
+import { deploy } from './gulp/deploy.js'
+import { images } from './gulp/images.js'
+import { scripts } from './gulp/scripts.js'
+import { styles } from './gulp/styles.js'
+import { clean, assetscopy } from './gulp/assets.js'
 
 //  server reload task
 function browserSync() {
@@ -23,8 +23,8 @@ function browserSync() {
     watch: true,
     notify: false,
     server: { baseDir: distDir },
-    online: false,
-    browser: ['firefox'], // or 'chrome', 'msedge', 'opera'
+    online: true,
+    browser: ['chrome'], // or 'firefox', 'msedge', 'opera'
   })
 }
 
@@ -39,7 +39,7 @@ function watchDev() {
 
 // export all tasks
 export { html, htmlmin, clean, assetscopy, styles, scripts, images, deploy }
-export let build = series(clean, html, htmlmin, assetscopy, images, styles, scripts)
-export let assets = series(html, assetscopy, images, styles, scripts)
+export let assets = series(assetscopy, images, html, styles, scripts)
 export let serve = parallel(browserSync, watchDev)
 export let dev = series(clean, assets, serve)
+export let build = series(clean, assets)

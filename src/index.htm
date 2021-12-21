@@ -1,11 +1,11 @@
----
-layout: default
-title: Board | Home
-pageheader: Starter Template v0.0.1
----
-<main class="container mx-auto p-4">
+{% extends "layouts/default.htm" %}
+{% set title = "Home" %}
+{% set pageheader = "Starter Template v0.0.1" %}
+<!-- ••• -->
+{% block main %}
+<main class="container lg:max-w-5xl mx-auto p-4">
   <article>
-    <h2 class="my-4">Hello World!</h2>
+    <h2 class="my-4">Hello World! How are you?</h2>
     <p class="mb-4 indent-6 first-letter:font-black first-letter:text-4xl first-letter:mr-[2px]">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis perspiciatis atque magnam cupiditate, exercitationem alias laudantium! Quasi dignissimos harum repellendus!
     </p>
@@ -16,6 +16,8 @@ pageheader: Starter Template v0.0.1
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis at natus sit eius porro perferendis laboriosam nulla pariatur minima ad? Cum ut, atque eaque provident illum minus sequi. Voluptatibus iusto eum, at consequuntur atque inventore perferendis eaque quod quaerat fugiat possimus suscipit,
       enim ex dolores aliquid sequi, nostrum omnis facere!
     </p>
-    <div class="text-right"><a href="post.html">Read more ...</a></div>
+    <div class="text-right"><a href="post.html">read more ...</a></div>
   </article>
 </main>
+{% endblock %}
+<!-- end index.html -->

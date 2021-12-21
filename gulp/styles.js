@@ -22,10 +22,11 @@ import postcssScss from 'postcss-scss'
 import rename from 'gulp-rename'
 import tailwindcss from 'tailwindcss'
 import tailwindNesting from './nesting.cjs'
+import { env } from 'process'
 
 // postcss plagins config
 let plugins = []
-if (process.env.BUILD === 'production') {
+if (env.BUILD === 'production') {
   plugins = [
     postcssImport,
     tailwindNesting,

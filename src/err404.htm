@@ -1,0 +1,14 @@
+<!-- er404.html -->
+{% extends "layouts/default.htm" %}
+{% set title = "404" %}
+{% set pageheader = "Error 404" %}
+<!-- ••• -->
+{% block main %}
+<div class="h-screen container mx-auto flex justify-center items-center border-l border-r border-dotted border-zinc-700">
+  <section class="h-40 sm:w-80">
+    <h1 class="mb-0">Error 404!</h1>
+    <p class="mb-10"><strong>Document not found.</strong></p>
+    <a class="px-4 py-2 border rounded-md border-zinc-500 hover:border-zinc-300 hover:text-zinc-300 hover:no-underline inline-block active:translate-y-0.5" href="index.html"><span class="font-normal">Home</span></a>
+  </section>
+</div>
+{% endblock %}

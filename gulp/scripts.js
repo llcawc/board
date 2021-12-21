@@ -26,12 +26,12 @@ export async function scripts() {
     format: 'iife',
     plugins: [
       // use terser for production
-      env.BUILD === 'production' ? terser({ compress: { passes: 2 }, format: { comments: false } }) : null,
+      env.BUILD === 'production' ? terser({format: {comments: false}}) : null,
     ],
   })
   if (env.BUILD === 'production') {
-    console.log(chalk.magenta('JS build for production is completed OK!'))
+    console.log(chalk.green('JS build for production is completed OK!'))
   } else {
-    console.log(chalk.green('Script developments is running OK!'))
+    console.log(chalk.magenta('Script developments is running OK!'))
   }
 }

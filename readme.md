@@ -2,7 +2,7 @@
 
 _Revision 0.0.2 from 2021.12.20_
 
-Starter uses Gulp as dependencies for front-end's works. On board: HTML-Minifier, TailwindCSS, nesting and import suntax on base PostCSS witch Autoprefixer and Nanocss plugins, Rollup witch JSON and Terser plufins. Imagemin. For multi page development used gulp plugin Panini (powered by the Handlebars templating language).
+Starter uses Gulp as dependencies for front-end's works. On board: HTML-Minifier, TailwindCSS, nesting and import suntax on base PostCSS witch Autoprefixer and Nanocss plugins, Rollup witch JSON and Terser plufins. Imagemin. For multi page development used Nunjucks templating language.
 
 ## Getting started
 

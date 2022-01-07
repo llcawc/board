@@ -25,14 +25,23 @@ function browserSync() {
     server: { baseDir: distDir },
     online: true,
     browser: ['chrome'], // or 'firefox', 'msedge', 'opera'
+    callbacks: {
+      ready: function(err, bs) {
+        // adding a middleware of the stack after Browsersync is running
+        bs.addMiddleware("*", function (req, res) {
+          res.writeHead(302, { location: "err404.html" })
+          res.end("Redirecting!")
+        })
+      }
+    },
   })
 }
 
 // watch task
 function watchDev() {
-  watch(`./${baseDir}/**/*.{html,htm,njk,hbs}`, { usePolling: true }, series(html, styles))
-  watch(`./${baseDir}/assets/js/**/*.{js,mjs,cjs}`, { usePolling: true }, scripts)
-  watch(`./${baseDir}/assets/css/**/*.{css,scss}`, { usePolling: true }, styles)
+  watch(`./${baseDir}/**/*.{html,htm,njk}`, { usePolling: true }, series(html, styles))
+  watch(`./${baseDir}/assets/scripts/**/*.{js,mjs,cjs}`, { usePolling: true }, scripts)
+  watch(`./${baseDir}/assets/styles/**/*.{css,scss}`, { usePolling: true }, styles)
   watch(`./${baseDir}/assets/img/**/*.{jpg,png,svg}`, { usePolling: true }, images)
   watch(`./${baseDir}/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browsersync.reload)
 }

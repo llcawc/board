@@ -4,17 +4,17 @@
 const baseDir = 'src' // Base directory path without «/» at the end
 const distDir = 'dist' // Distribution folder for uploading to the site
 let paths = {
-  src: baseDir + '/assets/js/main.js',
+  src: baseDir + '/assets/scripts/main.js',
   dest: distDir + '/assets/js/main.min.js',
 }
 
 // import modules
+import { env } from 'process'
 import { rollup } from 'rollup'
 import { babel } from '@rollup/plugin-babel'
-import json from '@rollup/plugin-json'
 import { terser } from 'rollup-plugin-terser'
+import json from '@rollup/plugin-json'
 import chalk from 'chalk'
-import { env } from 'process'
 
 export async function scripts() {
   const bundle = await rollup({
@@ -24,10 +24,9 @@ export async function scripts() {
   await bundle.write({
     file: paths.dest,
     format: 'iife',
-    plugins: [
-      // use terser for production
-      env.BUILD === 'production' ? terser({format: {comments: false}}) : null,
-    ],
+    name: "main",
+    sourcemap: env.BUILD === 'production' ? false : true,
+    plugins: env.BUILD === 'production' ? [terser({compress: {passes: 2}, format: {comments: false}})] : false,
   })
   if (env.BUILD === 'production') {
     console.log(chalk.green('JS build for production is completed OK!'))

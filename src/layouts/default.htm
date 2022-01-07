@@ -14,7 +14,7 @@
   {% if title !== '404' %}
   <div class="h-screen grid grid-cols-1 grid-rows-[12rem_auto_4rem]">
   {# -- header -- #}
-  {% include "partials/header.htm" %}
+  {% include "includes/header.htm" %}
   {% endif %}
   {# -- main -- #}
   {% block main %}
@@ -22,7 +22,7 @@
   {% endblock %}
   {% if title !== '404' %}
   {# -- footer -- #}
-  {% include "partials/footer.htm" %}
+  {% include "includes/footer.htm" %}
   </div>
   <script src="assets/js/main.min.js"></script>
   {% endif %}

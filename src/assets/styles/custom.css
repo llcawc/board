@@ -18,7 +18,7 @@ h2 {
 }
 
 a {
-  @apply font-medium text-zinc-400 decoration-red-700 hover:text-zinc-300 transition-all;
+  @apply font-medium text-zinc-400 hover:text-red-700 transition-all;
 }
 
 .column {

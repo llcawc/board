@@ -6,13 +6,13 @@ const distDir = 'dist' // Distribution folder for uploading to the site
 let html = ()=>{}
 
 // import modules
+import { env } from 'process'
 import gulp from 'gulp'
 const { src, dest, series } = gulp
 import nunjucks from 'gulp-nunjucks'
 import prettier from 'gulp-prettier'
 import minify from 'gulp-htmlmin'
 import chalk from 'chalk'
-import { env } from 'process'
 
 // html assembly task
 function assemble() {

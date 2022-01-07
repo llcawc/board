@@ -5,7 +5,7 @@ const baseDir = 'src' // Base directory path without «/» at the end
 const distDir = 'dist' // Distribution folder for uploading to the site
 let paths = {
   images: {
-    src: baseDir + '/assets/img/**/*',
+    src: baseDir + '/assets/images/**/*',
     dest: distDir + '/assets/images',
   },
 }

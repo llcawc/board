@@ -20,7 +20,6 @@ import postcssImport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
 import cssnano from 'cssnano'
 import postcssScss from 'postcss-scss'
-import sourcemaps from 'gulp-sourcemaps'
 import rename from 'gulp-rename'
 import tailwindcss from 'tailwindcss'
 import tailwindNesting from './nesting.cjs'
@@ -52,11 +51,9 @@ export function styles() {
       .pipe(dest(paths.styles.dest))
   } else {
     console.log(chalk.magenta('CSS developments is running OK!'))
-    return src(paths.styles.src)
-      .pipe(sourcemaps.init())
+    return src(paths.styles.src, { sourcemaps: true })
       .pipe(postcss(plugins, { parser: postcssScss }))
       .pipe(rename(paths.cssOutputName))
-      .pipe(sourcemaps.write('.'))
-      .pipe(dest(paths.styles.dest))
+      .pipe(dest(paths.styles.dest, { sourcemaps: '.' }))
   }
 }

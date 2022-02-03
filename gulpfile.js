@@ -24,7 +24,7 @@ function browserSync() {
     notify: false,
     server: { baseDir: distDir },
     online: true,
-    browser: ['chrome'], // or 'firefox', 'msedge', 'opera'
+    browser: ['firefox'], // or 'chrome', 'msedge', 'opera'
     callbacks: {
       ready: function(err, bs) {
         // adding a middleware of the stack after Browsersync is running
@@ -41,7 +41,7 @@ function browserSync() {
 function watchDev() {
   watch(`./${baseDir}/**/*.{html,htm,njk}`, { usePolling: true }, series(html, styles))
   watch(`./${baseDir}/assets/scripts/**/*.{js,mjs,cjs}`, { usePolling: true }, scripts)
-  watch(`./${baseDir}/assets/styles/**/*.{css,scss}`, { usePolling: true }, styles)
+  watch(`./${baseDir}/assets/styles/**/*.{css,scss,pcss}`, { usePolling: true }, styles)
   watch(`./${baseDir}/assets/img/**/*.{jpg,png,svg}`, { usePolling: true }, images)
   watch(`./${baseDir}/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browsersync.reload)
 }

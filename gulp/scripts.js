@@ -1,4 +1,4 @@
-// scripts.mjs
+// scripts.js
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -16,6 +16,7 @@ import { terser } from 'rollup-plugin-terser'
 import json from '@rollup/plugin-json'
 import chalk from 'chalk'
 
+// task
 export async function scripts() {
   const bundle = await rollup({
     input: paths.src,

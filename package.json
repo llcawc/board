@@ -65,6 +65,7 @@
       {
         "files": [
           "*.js",
+          "*.cjs",
           "*.mjs"
         ],
         "options": {

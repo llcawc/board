@@ -1,4 +1,4 @@
-// styles.mjs
+// styles.js
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end

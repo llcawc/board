@@ -3,7 +3,7 @@
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
 const distDir = 'dist' // Distribution folder for uploading to the site
-const fileswatch = 'html,htm,njk,hbs,php,txt,js,cjs,mjs,jpg,png,svg,json,md,woff2'
+const fileswatch = 'html,htm,njk,hbs,php,txt,css,scss,pcss,js,cjs,mjs,jpg,png,svg,json,md,woff2'
 
 // import modules
 import gulp from 'gulp'
@@ -19,12 +19,9 @@ import { clean, assetscopy } from './gulp/assets.js'
 //  server reload task
 function browserSync() {
   browsersync.init({
-    files: [distDir + '/**/*'],
-    watch: true,
-    notify: false,
     server: { baseDir: distDir },
+    notify: false,
     online: true,
-    browser: ['firefox'], // or 'chrome', 'msedge', 'opera'
     callbacks: {
       ready: function(err, bs) {
         // adding a middleware of the stack after Browsersync is running

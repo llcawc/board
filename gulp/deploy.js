@@ -1,4 +1,4 @@
-// deploy.mjs
+// deploy.js
 
 // variables & path
 const paths = {

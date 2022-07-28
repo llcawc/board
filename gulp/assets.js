@@ -5,7 +5,10 @@ const baseDir = 'src' // Base directory path without «/» at the end
 const distDir = 'dist' // Distribution folder for uploading to the site
 let paths = {
   copy: {
-    src: [baseDir + '/assets/fonts/**/*', baseDir + '/assets/vendor/**/*'],
+    src: [
+      baseDir + '/assets/fonts/**/*',
+      baseDir + '/assets/vendor/**/*'
+    ],
     dest: distDir,
     base: baseDir,
   },
@@ -17,7 +20,7 @@ let paths = {
 // import modules
 import gulp from 'gulp'
 const { src, dest } = gulp
-import del from 'del'
+import { deleteAsync as del } from 'del'
 
 // define & export task
 export function assetscopy() {

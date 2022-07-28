@@ -1,0 +1,20 @@
+{
+  "files.associations": {
+    "*.htm": "html",
+    "*.postcss": "scss"
+  },
+  "emmet.includeLanguages": {
+    "njk": "html",
+    "htm": "html",
+    "postcss": "scss"
+  },
+  "emmet.syntaxProfiles": {
+    "njk": "html",
+    "htm": "html",
+  },
+  "vsicons.associations.files": [
+    { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" },
+    { "icon": "html", "extensions": ["htm"], "format": "svg" },
+    { "icon": "postcss", "extensions": ["postcss"], "format": "svg" },
+  ],
+}

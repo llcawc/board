@@ -1,4 +1,4 @@
-// custom.postcss
+// home.postcss
 
 :root {
   --font-family-sans: pasInter, sans-serif;
@@ -9,16 +9,22 @@ body {
   @apply text-zinc-500 bg-zinc-900;
   font-family: var(--font-family-sans);
 }
-
+code {
+  @apply text-red-400 text-opacity-90;
+  font-family: var(--font-family-mono);
+}
+h1, h2 {
+  @apply text-white mb-4 font-semibold;
+}
 h1 {
-  @apply text-4xl mb-4 font-semibold;
+  @apply text-4xl;
 }
 h2 {
-  @apply text-3xl mb-4 font-semibold;
+  @apply text-3xl;
 }
 
 a {
-  @apply font-medium text-zinc-400 hover:text-red-700 transition-all;
+  @apply font-medium text-red-600 hover:text-red-800 transition-all focus-visible:outline-red-600 focus-visible:outline-dotted focus-visible:outline-4;
 }
 
 .column {

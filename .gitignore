@@ -1,9 +1,6 @@
 # Node & project folders
-/node_modules/
-/libs/
-/dist/
 /.git/
-/**/package-lock.json
+/node_modules/
 /**/debug.log
 
 # archive package

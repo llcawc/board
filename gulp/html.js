@@ -17,7 +17,7 @@ import chalk from 'chalk'
 // html assembly task
 function assemble() {
   console.log(env.BUILD === 'production' ? chalk.green('Nunjuks running OK!'):chalk.magenta('Nunjuks running OK!'))
-  return src(baseDir +'/*.{html,htm,njk}', { base: baseDir + '/' })
+  return src(baseDir +'/*.{html,htm,njk}')
     .pipe(nunjucks.compile().on('Error', function(error){ console.log(error) }))
     .pipe(prettier())
     .pipe(dest(distDir + '/'))

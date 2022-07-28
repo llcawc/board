@@ -1,6 +1,6 @@
 # Board - starter template for the front-end
 
-_Revision 0.0.3 from 2022.01.07_
+_Revision 0.0.4 from 2022.07.28_
 
 Starter uses Gulp as dependencies for front-end's works. On board: [HTML-Minifier](https://github.com/jonschlinkert/gulp-htmlmin), [TailwindCSS](https://github.com/tailwindlabs/tailwindcss), nesting and import suntax on base [PostCSS](https://github.com/postcss/postcss) witch Autoprefixer and Nanocss plugins, [Rollup](https://github.com/rollup/rollup) witch JSON and [Terser](https://github.com/terser/terser) plufins. [Imagemin](https://github.com/imagemin/imagemin). For multi page development used Nunjucks templating language.
 

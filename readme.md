@@ -58,4 +58,4 @@ If you need to develop [bootstrap](https://getbootstrap.com/) or [bootstrap-icon
 
 ----
 
-&copy;&nbsp;2021 [llcawc](https://github.com/llcawc), all rights reserved. Made&nbsp;with&nbsp;<span style="color: #e60f0a;">&#10084;</span>&nbsp;for&nbsp;the&nbsp;best&nbsp;architecture.
+Copyright&copy;&nbsp;2022 [llcawc](https://github.com/llcawc), all rights reserved. Made&nbsp;with&nbsp;<span style="color: #e60f0a;">&#10084;</span>&nbsp;for&nbsp;the&nbsp;best&nbsp;architecture.

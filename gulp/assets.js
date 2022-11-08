@@ -13,7 +13,12 @@ let paths = {
     base: baseDir,
   },
   del: {
-    src: [distDir + '/assets/*', `!${distDir}/assets/images`],
+    src: [
+      distDir + '/**',
+      distDir + '/assets/**',
+      '!' + distDir + '/assets',
+      '!' + distDir + '/assets/images',
+    ],
   },
 }
 
@@ -23,10 +28,14 @@ const { src, dest } = gulp
 import { deleteAsync as del } from 'del'
 
 // define & export task
-export function assetscopy() {
+function assetscopy() {
   return src(paths.copy.src, { base: paths.copy.base }).pipe(dest(paths.copy.dest))
 }
-
-export function clean() {
-  return del(paths.del.src, { force: true })
+function clean() {
+  return del(paths.del.src)
 }
+function cleandist() {
+  return del(distDir, { force: true })
+}
+
+export {assetscopy, clean, cleandist}

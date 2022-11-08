@@ -13,13 +13,16 @@ let paths = {
 // import modules
 import gulp from 'gulp'
 const { src, dest } = gulp
-import imagemin from 'gulp-imagemin'
-import newer from 'gulp-newer'
+import imagemin, { mozjpeg, svgo } from 'gulp-imagemin'
+import changed from 'gulp-changed'
 
 // define & export task
 export function images() {
   return src(paths.images.src)
-    .pipe(newer(paths.images.dest))
-    .pipe(imagemin({ verbose: 'true' }))
+    .pipe(changed(paths.images.dest))
+    .pipe(imagemin([
+      mozjpeg({quality: 75, progressive: true}),
+      svgo({ plugins: [{ name: 'removeViewBox', active: false }] }),
+      ], { verbose: 'true' }))
     .pipe(dest(paths.images.dest))
 }

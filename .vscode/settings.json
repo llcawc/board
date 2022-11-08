@@ -15,6 +15,6 @@
   "vsicons.associations.files": [
     { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" },
     { "icon": "html", "extensions": ["htm"], "format": "svg" },
-    { "icon": "postcss", "extensions": ["postcss"], "format": "svg" },
+    { "icon": "PostCSS", "extensions": ["postcss"], "format": "svg" },
   ],
 }

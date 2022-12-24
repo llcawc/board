@@ -1,18 +1,5 @@
 // styles.js
 
-// variables & path
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
-let paths = {
-  styles: {
-    src: [
-      baseDir + '/assets/styles/main.*',
-      baseDir + '/assets/styles/fonts.*',
-    ],
-    dest: distDir + '/assets/css',
-  },
-}
-
 // import modules
 import { env } from 'process'
 import gulp from 'gulp'
@@ -27,21 +14,33 @@ import tailwindcss from 'tailwindcss'
 import tailwindNesting from './nesting.cjs'
 import chalk from 'chalk'
 
-// postcss plagins config
-let plugins = []
-if (env.BUILD === 'production') {
-  plugins = [
-    postcssImport,
-    tailwindNesting,
-    tailwindcss,
-    autoprefixer,
-    cssnano({
-      preset: ['default', { discardComments: { removeAll: true } }],
-    }),
-  ]
-} else {
-  plugins = [postcssImport, tailwindNesting, tailwindcss]
+// variables & path
+const baseDir = 'src' // Base directory path without «/» at the end
+const distDir = 'dist' // Distribution folder for uploading to the site
+let paths = {
+  styles: {
+    src: [
+      baseDir + '/assets/styles/main.*',
+      baseDir + '/assets/styles/fonts.*',
+    ],
+    dest: distDir + '/assets/css',
+  },
 }
+
+// postcss plagins config
+const plugins = env.BUILD === 'production'
+  ? [
+      postcssImport,
+      tailwindNesting,
+      tailwindcss,
+      autoprefixer,
+      cssnano({ preset: ['default', { discardComments: {removeAll: true} }] }),
+    ]
+  : [
+      postcssImport,
+      tailwindNesting,
+      tailwindcss,
+    ]
 
 // task
 export function styles() {

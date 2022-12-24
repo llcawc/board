@@ -1,4 +1,9 @@
-// assets.mjs
+// assets.js
+
+// import modules
+import gulp from 'gulp'
+const { src, dest } = gulp
+import { deleteAsync as del } from 'del'
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -21,11 +26,6 @@ let paths = {
     ],
   },
 }
-
-// import modules
-import gulp from 'gulp'
-const { src, dest } = gulp
-import { deleteAsync as del } from 'del'
 
 // define & export task
 function assetscopy() {

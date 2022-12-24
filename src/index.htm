@@ -3,7 +3,7 @@
 {% set pageHeader = "Board Starter Template" %}
 <!-- ••• -->
 {% block main %}
-<main class="container lg:max-w-5xl mx-auto p-4">
+<main class="container lg:max-w-5xl mx-auto p-4 animated fadeInUp">
   <article>
     <h1 class="my-4 text-center md:text-left">Hello World! How are you?</h1>
     <p class="mb-4 indent-4 first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam voluptatum corrupti officia sit. Iste molestias autem amet, similique ea, expedita nemo, assumenda iure nihil mollitia earum quidem laborum voluptatum illo! Culpa quibusdam natus accusantium. Accusantium distinctio quaerat ut voluptate dolorem.</p>
@@ -14,31 +14,7 @@
     <p class="mb-4 indent-6 first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]">Install Better Nunjucks Syntax and Snippets Extension for Visual Studio Code used links:
       <a href="https://marketplace.visualstudio.com/items?itemName=ginfuru.better-nunjucks">Marketplace.</a>
       <a href="https://github.com/edheltzel/nunjucks-for-visual-studio-code">GitHub.</a>
-    Create folder / file: <code>.vscode/settings.json</code>. I use extersion ".htm" for nunjucks files. Another is when selecting the nunjucks grammar, enabling support for emmet is provided though the editor or the workspace settings:</p>
-    <div class="overflow-x-auto">
-      <pre><code>
-{
-  "files.associations": {
-    "*.htm": "html",
-    "*.postcss": "scss"
-  },
-  "emmet.includeLanguages": {
-    "njk": "html",
-    "htm": "html",
-    "postcss": "scss"
-  },
-  "emmet.syntaxProfiles": {
-    "njk": "html",
-    "htm": "html",
-  },
-  "vsicons.associations.files": [
-  { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" },
-  { "icon": "html", "extensions": ["htm"], "format": "svg" },
-  { "icon": "PostCSS", "extensions": ["postcss"], "format": "svg" },
-  ],
-}
-      </code></pre>
-    </div>
+    Create folder / file: <code>.vscode/settings.json</code>. I use extersion ".htm" for nunjucks files.</p>
     <p class="mb-0">Run <code>npm</code> command:</p>
     <ul class="mb-4">
       <li class="ml-4">for development: <code>>> npm run dev</code></li>

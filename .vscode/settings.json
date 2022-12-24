@@ -1,7 +1,8 @@
 {
   "files.associations": {
     "*.htm": "html",
-    "*.postcss": "scss"
+    "*.css": "scss",
+    "*.postcss": "scss",
   },
   "emmet.includeLanguages": {
     "njk": "html",
@@ -13,8 +14,15 @@
     "htm": "html",
   },
   "vsicons.associations.files": [
-    { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" },
     { "icon": "html", "extensions": ["htm"], "format": "svg" },
+    { "icon": "tailwind", "extensions": ["css"], "format": "svg" },
+    { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" },
     { "icon": "PostCSS", "extensions": ["postcss"], "format": "svg" },
   ],
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 }

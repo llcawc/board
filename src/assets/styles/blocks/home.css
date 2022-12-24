@@ -1,0 +1,41 @@
+// home.css
+
+@layer base {
+
+  :root {
+    --font-family-sans: pasInter, sans-serif;
+    --font-family-mono: pasJetBrainsMono, monospace;
+  }
+
+  body {
+    @apply text-zinc-500 bg-zinc-900;
+    font-family: var(--font-family-sans);
+  }
+  code {
+    @apply text-red-400 text-opacity-90;
+    font-family: var(--font-family-mono);
+  }
+  h1, h2 {
+    @apply text-white mb-4 font-semibold;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+
+  a {
+    @apply font-medium text-red-600 hover:text-red-800 transition-all focus-visible:outline-red-600 focus-visible:outline-dotted focus-visible:outline-4;
+  }
+
+}
+
+.column {
+  column-count: 1;
+  column-gap: 2rem;
+  @media (min-width: 640px) {
+    column-count: auto;
+    column-width: 20rem;
+  }
+}

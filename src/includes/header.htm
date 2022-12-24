@@ -1,4 +1,4 @@
-<header class="flex items-center bg-cover bg-center bg-no-repeat bg-[url('../images/ice.jpg')]">
+<header class="flex items-center bg-cover bg-center bg-no-repeat bg-[url('../images/ice.jpg')] animated fadeInUp">
   <div class="container px-4 mx-auto text-center text-white">
     <h1 class="drop-shadow">
       {% if title === 'Home' %}
@@ -17,7 +17,7 @@
         <li><a class="text-white font-medium hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4
           {% if title === 'Home' %}
             underline underline-offset-4 decoration-4 decoration-red-500
-          {% endif %}" href="index.html">Home</a></li>
+          {% endif %}" href="/">Home</a></li>
         <li>•</li>
         <li><a class="text-white font-medium hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4
           {% if title === 'Post' %}
@@ -27,7 +27,7 @@
         <li><a class="text-white font-medium hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4
           {% if title === '404' %}
             underline underline-offset-4 decoration-4 decoration-red-500
-          {% endif %}" href="err404.html">Error</a></li>
+          {% endif %}" href="404.html">Error</a></li>
       </ul>
     </nav>
   </div>

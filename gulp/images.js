@@ -1,4 +1,10 @@
-// images.mjs
+// images.js
+
+// import modules
+import gulp from 'gulp'
+const { src, dest } = gulp
+import imagemin, { mozjpeg, svgo } from 'gulp-imagemin'
+import changed from 'gulp-changed'
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -9,12 +15,6 @@ let paths = {
     dest: distDir + '/assets/images',
   },
 }
-
-// import modules
-import gulp from 'gulp'
-const { src, dest } = gulp
-import imagemin, { mozjpeg, svgo } from 'gulp-imagemin'
-import changed from 'gulp-changed'
 
 // define & export task
 export function images() {

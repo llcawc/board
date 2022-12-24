@@ -1,13 +1,8 @@
 // gulpfile.js
 
-// variables & path
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
-const fileswatch = 'html,htm,njk,hbs,php,txt,css,scss,pcss,js,cjs,mjs,jpg,png,svg,json,md,woff2'
-
 // import modules
 import gulp from 'gulp'
-const { parallel, series, watch } = gulp
+const { src, dest, parallel, series, watch } = gulp
 import browsersync from 'browser-sync'
 import { html, htmlmin } from './gulp/html.js'
 import { deploy } from './gulp/deploy.js'
@@ -16,21 +11,17 @@ import { scripts } from './gulp/scripts.js'
 import { styles } from './gulp/styles.js'
 import { assetscopy, clean, cleandist } from './gulp/assets.js'
 
+// variables & path
+const baseDir = 'src' // Base directory path without «/» at the end
+const distDir = 'dist' // Distribution folder for uploading to the site
+const fileswatch = 'html,htm,njk,hbs,php,txt,css,scss,pcss,js,cjs,mjs,jpg,png,svg,json,md,woff2'
+
 //  server reload task
 function browserSync() {
   browsersync.init({
     server: { baseDir: distDir },
     notify: false,
     online: true,
-    callbacks: {
-      ready: function(err, bs) {
-        // adding a middleware of the stack after Browsersync is running
-        bs.addMiddleware("*", function (req, res) {
-          res.writeHead(302, { location: "err404.html" })
-          res.end("Redirecting!")
-        })
-      }
-    },
   })
 }
 

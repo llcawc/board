@@ -1,5 +1,10 @@
 // deploy.js
 
+// import modules
+import gulp from 'gulp'
+const { src, dest, parallel, series, watch } = gulp
+import rsync from 'gulp-rsync'
+
 // variables & path
 const paths = {
   deploy: {
@@ -22,11 +27,6 @@ const paths = {
     ],
   },
 }
-
-// import modules
-import gulp from 'gulp'
-const { src, dest, parallel, series, watch } = gulp
-import rsync from 'gulp-rsync'
 
 // define & export task for production
 export function deploy() {

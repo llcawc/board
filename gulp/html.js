@@ -1,9 +1,4 @@
-// html.mjs
-
-// variables & path
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
-let html = ()=>{}
+// html.js
 
 // import modules
 import { env } from 'process'
@@ -13,6 +8,11 @@ import nunjucks from 'gulp-nunjucks'
 import prettier from 'gulp-prettier'
 import minify from 'gulp-htmlmin'
 import chalk from 'chalk'
+
+// variables & path
+const baseDir = 'src' // Base directory path without «/» at the end
+const distDir = 'dist' // Distribution folder for uploading to the site
+let html = ()=>{}
 
 // html assembly task
 function assemble() {

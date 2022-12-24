@@ -1,4 +1,4 @@
-// prettier.config.js
+// prettier.config.cjs
 
 module.exports = {
   // These settings are duplicated in .editorconfig:
@@ -11,12 +11,8 @@ module.exports = {
   printWidth: 120, // default: 80
   trailingComma: 'es5',
   bracketSpacing: true,
-  overrides: [
-    {
-      files: ['*.js', '*.cjs', '*.mjs'],
-      options: {
-        parser: 'flow',
-      },
-    },
-  ],
+  overrides: [{ files: ['*.js', '*.cjs', '*.mjs'], options: { parser: 'flow' } }],
+  // TailwindCSS
+  plugins: [ require('prettier-plugin-tailwindcss') ],
+  tailwindConfig: './tailwind.config.cjs',
 }

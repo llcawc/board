@@ -25,4 +25,5 @@
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "liveServer.settings.port": 3002,
 }

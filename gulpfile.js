@@ -22,6 +22,7 @@ function browserSync() {
     server: { baseDir: distDir },
     notify: false,
     online: true,
+    open:   false,
   })
 }
 

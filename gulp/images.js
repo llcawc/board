@@ -2,7 +2,7 @@
 
 // import modules
 import gulp from 'gulp'
-const { src, dest } = gulp
+const { src, dest, parallel, series, watch } = gulp
 import imagemin, { mozjpeg, svgo } from 'gulp-imagemin'
 import changed from 'gulp-changed'
 

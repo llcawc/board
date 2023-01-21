@@ -4,8 +4,8 @@ const baseDir = 'src'
 
 module.exports = {
   content: [
-    `./${baseDir}/**/*.{html,htm,njk}`,
-    `./${baseDir}/src/js/**/*.js`
+    baseDir + '/**/*.{html,htm,njk}',
+    baseDir + '/assets/scripts/**/*.js',
   ],
   theme: {
     extend: {

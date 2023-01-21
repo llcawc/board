@@ -1,28 +1,17 @@
 {
   "name": "board",
-  "version": "0.0.5",
-  "date": "2022.12.24",
+  "version": "23.01.22",
   "license": "ISC",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
   "description": "board starter template by pasmurno",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/llcawc/board.git"
-  },
-  "keywords": [
-    "board",
-    "starter",
-    "template"
-  ],
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
     "dev": "gulp dev",
     "serve": "gulp serve",
-    "deploy": "gulp deploy",
     "build": "BUILD=production gulp build && npm run arc",
-    "arc": "rsync -aP --delete --exclude=node_modules --exclude=Thumbs.db --exclude=.DS_Store ./ /mnt/d/Coding/tailwind/board/"
+    "arc": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/board/"
   },
   "devDependencies": {
     "@babel/core": "^7.20.7",
@@ -41,15 +30,15 @@
     "gulp-postcss": "^9.0.1",
     "gulp-prettier": "^4.0.0",
     "gulp-rename": "^2.0.0",
-    "gulp-rsync": "0.0.9",
+    "gulp-terser": "^2.1.0",
     "postcss": "^8.4.20",
     "postcss-import": "^15.1.0",
     "postcss-scss": "^4.0.6",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.2.1",
     "rollup": "^3.8.1",
-    "rollup-plugin-terser": "^7.0.2",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.4",
+    "terser": "^5.16.1"
   },
   "dependencies": {
     "animate.css": "^4.1.1"

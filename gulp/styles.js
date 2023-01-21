@@ -3,7 +3,7 @@
 // import modules
 import { env } from 'process'
 import gulp from 'gulp'
-const { src, dest } = gulp
+const { src, dest, parallel, series, watch } = gulp
 import postcss from 'gulp-postcss'
 import postcssImport from 'postcss-import'
 import postcssScss from 'postcss-scss'

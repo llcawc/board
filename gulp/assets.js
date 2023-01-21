@@ -2,7 +2,7 @@
 
 // import modules
 import gulp from 'gulp'
-const { src, dest } = gulp
+const { src, dest, parallel, series, watch } = gulp
 import { deleteAsync as del } from 'del'
 
 // variables & path

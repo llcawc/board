@@ -8,10 +8,10 @@ import postcss from 'gulp-postcss'
 import postcssImport from 'postcss-import'
 import postcssScss from 'postcss-scss'
 import autoprefixer from 'autoprefixer'
-import cssnano from 'cssnano'
+import postcssCsso from 'postcss-csso'
 import rename from 'gulp-rename'
 import tailwindcss from 'tailwindcss'
-import tailwindNesting from './nesting.cjs'
+import tailwindNesting from 'tailwindcss/nesting/index.js'
 import chalk from 'chalk'
 
 // variables & path
@@ -34,7 +34,7 @@ const plugins = env.BUILD === 'production'
       tailwindNesting,
       tailwindcss,
       autoprefixer,
-      cssnano({ preset: ['default', { discardComments: {removeAll: true} }] }),
+      postcssCsso,
     ]
   : [
       postcssImport,

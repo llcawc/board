@@ -15,14 +15,8 @@
   },
   "vsicons.associations.files": [
     { "icon": "html", "extensions": ["htm"], "format": "svg" },
-    { "icon": "css", "extensions": ["css"], "format": "svg" },
+    { "icon": "tailwind", "extensions": ["css"], "format": "svg" },
     { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" },
     { "icon": "PostCSS", "extensions": ["postcss"], "format": "svg" },
   ],
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
 }

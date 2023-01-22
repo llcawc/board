@@ -8,6 +8,7 @@
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
+    "del": "rm -rf dist",
     "dev": "gulp dev",
     "serve": "gulp serve",
     "build": "BUILD=production gulp build && npm run arc",

@@ -6,8 +6,8 @@ const { src, dest, parallel, series, watch } = gulp
 import { deleteAsync as del } from 'del'
 
 // variables & path
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
+const baseDir = 'src'
+const distDir = 'dist'
 let paths = {
   copy: {
     src: [
@@ -17,14 +17,12 @@ let paths = {
     dest: distDir,
     base: baseDir,
   },
-  del: {
-    src: [
-      distDir + '/**',
-      distDir + '/assets/**',
-      '!' + distDir + '/assets',
-      '!' + distDir + '/assets/images',
-    ],
-  },
+  clean: [
+    distDir + '/**',
+    distDir + '/assets/**',
+    '!' + distDir + '/assets',
+    '!' + distDir + '/assets/images',
+  ],
 }
 
 // define & export task
@@ -32,10 +30,8 @@ function assetscopy() {
   return src(paths.copy.src, { base: paths.copy.base }).pipe(dest(paths.copy.dest))
 }
 function clean() {
-  return del(paths.del.src)
-}
-function cleandist() {
-  return del(distDir, { force: true })
+  return del(paths.clean)
 }
 
-export {assetscopy, clean, cleandist}
+// export
+export { clean, assetscopy }

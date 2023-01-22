@@ -15,16 +15,14 @@ import tailwindNesting from 'tailwindcss/nesting/index.js'
 import chalk from 'chalk'
 
 // variables & path
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
+const baseDir = 'src'
+const distDir = 'dist'
 let paths = {
-  styles: {
-    src: [
-      baseDir + '/assets/styles/main.*',
-      baseDir + '/assets/styles/fonts.*',
-    ],
-    dest: distDir + '/assets/css',
-  },
+  src: [
+    baseDir + '/assets/styles/main.*',
+    baseDir + '/assets/styles/fonts.*',
+  ],
+  dest: distDir + '/assets/css',
 }
 
 // postcss plagins config
@@ -43,18 +41,21 @@ const plugins = env.BUILD === 'production'
     ]
 
 // task
-export function styles() {
+function styles() {
   if (env.BUILD === 'production') {
     console.log(chalk.green('CSS build for production is running OK!'))
-    return src(paths.styles.src)
+    return src(paths.src)
       .pipe(postcss(plugins, { parser: postcssScss }))
       .pipe(rename({suffix: '.min',extname: ".css"}))
-      .pipe(dest(paths.styles.dest))
+      .pipe(dest(paths.dest))
   } else {
     console.log(chalk.magenta('CSS developments is running OK!'))
-    return src(paths.styles.src, { sourcemaps: true })
+    return src(paths.src, { sourcemaps: true })
       .pipe(postcss(plugins, { parser: postcssScss }))
       .pipe(rename({suffix: '.min',extname: ".css"}))
-      .pipe(dest(paths.styles.dest, { sourcemaps: '.' }))
+      .pipe(dest(paths.dest, { sourcemaps: '.' }))
   }
 }
+
+// export
+export { styles }

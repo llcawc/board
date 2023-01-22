@@ -12,8 +12,8 @@ import gulpTerser from "gulp-terser"
 import chalk from 'chalk'
 
 // variables & path
-const baseDir = 'src' // Base directory path without «/» at the end
-const distDir = 'dist' // Distribution folder for uploading to the site
+const baseDir = 'src'
+const distDir = 'dist'
 let paths = {
   src:  baseDir + '/assets/scripts/main.js',
   min:  distDir + '/assets/js/main.min.js',

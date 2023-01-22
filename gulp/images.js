@@ -11,7 +11,7 @@ const baseDir = 'src'
 const distDir = 'dist'
 let paths = {
   src:  baseDir + '/assets/images/**/*.{jpg,png,svg,gif}',
-  dest: distDir + '/assets/images',
+  dest: distDir,
 }
 
 // define & export task

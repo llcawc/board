@@ -1,24 +1,26 @@
 {
   "name": "board",
-  "version": "23.01.22",
-  "license": "ISC",
+  "version": "23.01.30",
+  "license": "MIT",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
   "description": "board starter template by pasmurno",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
-    "del": "rm -rf dist",
     "dev": "gulp dev",
     "serve": "gulp serve",
-    "build": "BUILD=production gulp build && npm run arc",
-    "arc": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/board/"
+    "inline": "gulp inline",
+    "build": "BUILD=production gulp build",
+    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/breadboard/board/"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.7",
+    "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.0",
     "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "autoprefixer": "^10.4.13",
     "browser-sync": "^2.27.11",
     "del": "^7.0.0",
@@ -26,22 +28,25 @@
     "gulp-changed": "^4.0.3",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^8.0.0",
-    "gulp-nunjucks": "^5.1.0",
     "gulp-postcss": "^9.0.1",
-    "gulp-prettier": "^4.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-purgecss": "^5.0.0",
     "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-terser": "^2.1.0",
-    "postcss": "^8.4.20",
+    "postcss": "^8.4.21",
     "postcss-csso": "^6.0.1",
     "postcss-import": "^15.1.0",
     "postcss-scss": "^4.0.6",
-    "prettier": "^2.8.1",
-    "prettier-plugin-tailwindcss": "^0.2.1",
-    "rollup": "^3.8.1",
+    "prettier": "^2.8.3",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "pug": "^3.0.2",
+    "rollup": "^3.10.0",
     "tailwindcss": "^3.2.4",
     "terser": "^5.16.1"
   },
   "dependencies": {
-    "animate.css": "^4.1.1"
+    "animate.css": "^4.1.1",
+    "bootstrap-icons": "^1.10.3"
   }
 }

@@ -1,10 +1,10 @@
-// main.css
-// used postcss plagins for import, nesting and comments
+/* main.css */
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-// user other custom styles
-@import 'blocks/home.css';
+/* user other custom styles */
 @import 'blocks/animate.css';
+@import 'blocks/common.css';
+@import 'blocks/home.css';

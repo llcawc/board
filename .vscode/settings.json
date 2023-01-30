@@ -1,22 +1,9 @@
 {
   "files.associations": {
-    "*.htm": "html",
     "*.css": "scss",
-    "*.postcss": "scss",
-  },
-  "emmet.includeLanguages": {
-    "njk": "html",
-    "htm": "html",
-    "postcss": "scss"
-  },
-  "emmet.syntaxProfiles": {
-    "njk": "html",
-    "htm": "html",
   },
   "vsicons.associations.files": [
-    { "icon": "html", "extensions": ["htm"], "format": "svg" },
     { "icon": "tailwind", "extensions": ["css"], "format": "svg" },
-    { "icon": "nunjucks", "extensions": ["njk"], "format": "svg" },
-    { "icon": "PostCSS", "extensions": ["postcss"], "format": "svg" },
   ],
+  "liveServer.settings.port": 3002,
 }

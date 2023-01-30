@@ -1,10 +1,6 @@
-// tailwind config.cjs
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    'src/**/*.{html,htm,njk}',
-    'src/assets/scripts/**/*.js',
-  ],
+  content: ['src/**/*.{html,htm,pug}', 'src/assets/scripts/**/*.js'],
   theme: {
     extend: {
       transitionDuration: {

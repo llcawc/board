@@ -1,0 +1,32 @@
+/* common.css */
+
+@layer base {
+  :root {
+    --font-family-sans: 'pasInter', sans-serif;
+    --font-family-mono: 'pasJetBrainsMono', monospace;
+  }
+  *:focus-visible {
+    @apply rounded outline outline-2 outline-offset-4 outline-red-600/50;
+  }
+  body {
+    @apply min-w-[300px] overflow-x-hidden bg-zinc-900 text-zinc-500;
+    font-family: var(--font-family-sans);
+  }
+  code {
+    @apply text-red-400 text-opacity-90;
+    font-family: var(--font-family-mono);
+  }
+  h1,
+  h2 {
+    @apply mb-4 font-semibold text-white;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  a {
+    @apply font-medium text-red-600 transition-all hover:text-red-800;
+  }
+}

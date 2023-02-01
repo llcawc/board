@@ -15,7 +15,7 @@ import postcss from 'gulp-postcss'
 import postcssImport from 'postcss-import'
 import postcssScss from 'postcss-scss'
 import autoprefixer from 'autoprefixer'
-import postcssCsso from 'postcss-csso'
+import csso from 'postcss-csso'
 import purgecss from 'gulp-purgecss'
 import { rollup } from 'rollup'
 import { babel } from '@rollup/plugin-babel'
@@ -70,7 +70,7 @@ let paths = {
 // postcss plagins config
 const plugins =
   env.BUILD === 'production'
-    ? [postcssImport, tailwindNesting, tailwindcss, autoprefixer, postcssCsso]
+    ? [postcssImport, tailwindNesting, tailwindcss, autoprefixer, csso({ comments: false })]
     : [postcssImport, tailwindNesting, tailwindcss]
 
 //  server reload task

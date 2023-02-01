@@ -5,5 +5,4 @@
   "vsicons.associations.files": [
     { "icon": "tailwind", "extensions": ["css"], "format": "svg" },
   ],
-  "liveServer.settings.port": 3002,
 }

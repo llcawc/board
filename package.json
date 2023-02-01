@@ -1,6 +1,6 @@
 {
   "name": "board",
-  "version": "23.01.30",
+  "version": "23.02.01",
   "license": "MIT",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
@@ -12,13 +12,13 @@
     "serve": "gulp serve",
     "inline": "gulp inline",
     "build": "BUILD=production gulp build",
-    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/breadboard/board/"
+    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/board/"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "autoprefixer": "^10.4.13",
@@ -41,9 +41,9 @@
     "prettier": "^2.8.3",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "pug": "^3.0.2",
-    "rollup": "^3.10.0",
+    "rollup": "^3.12.1",
     "tailwindcss": "^3.2.4",
-    "terser": "^5.16.1"
+    "terser": "^5.16.2"
   },
   "dependencies": {
     "animate.css": "^4.1.1",

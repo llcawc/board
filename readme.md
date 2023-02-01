@@ -1,6 +1,6 @@
 # Board - starter template for the front-end
 
-_Revision 23.02.01_
+_Revision 0.0.2 from 23.02.01_
 
 Starter uses Gulp as dependencies for front-end's works. On board: [HTML-Minifier](https://github.com/jonschlinkert/gulp-htmlmin), [TailwindCSS](https://github.com/tailwindlabs/tailwindcss), nesting and import suntax on base [PostCSS](https://github.com/postcss/postcss) witch Autoprefixer and minify plugins. Also used [Rollup](https://github.com/rollup/rollup) witch JSON plugins. Minify scripts: [Terser](https://github.com/terser/terser). Minify image: [Imagemin](https://github.com/imagemin/imagemin). For multi page development used PUG templating language. Added a gulp script that allows you to embed the script and style in html.
 

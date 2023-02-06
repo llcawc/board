@@ -1,6 +1,6 @@
 {
   "name": "board",
-  "version": "23.02.01",
+  "version": "23.02.05",
   "license": "MIT",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
@@ -8,11 +8,11 @@
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
+    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/board/",
     "dev": "gulp dev",
     "serve": "gulp serve",
     "inline": "gulp inline",
-    "build": "BUILD=production gulp build",
-    "arch": "rsync -aRv --delete --exclude=node_modules . /mnt/d/Coding/github/board/"
+    "build": "BUILD=production gulp build"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -26,7 +26,6 @@
     "del": "^7.0.0",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.3",
-    "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^8.0.0",
     "gulp-postcss": "^9.0.1",
     "gulp-pug": "^5.0.0",
@@ -37,13 +36,12 @@
     "postcss": "^8.4.21",
     "postcss-csso": "^6.0.1",
     "postcss-import": "^15.1.0",
-    "postcss-scss": "^4.0.6",
     "prettier": "^2.8.3",
     "prettier-plugin-tailwindcss": "^0.2.2",
     "pug": "^3.0.2",
-    "rollup": "^3.12.1",
+    "rollup": "^3.14.0",
     "tailwindcss": "^3.2.4",
-    "terser": "^5.16.2"
+    "terser": "^5.16.3"
   },
   "dependencies": {
     "animate.css": "^4.1.1",

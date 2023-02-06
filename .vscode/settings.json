@@ -1,6 +1,6 @@
 {
   "files.associations": {
-    "*.css": "scss",
+    "*.css": "tailwindcss",
   },
   "vsicons.associations.files": [
     { "icon": "tailwind", "extensions": ["css"], "format": "svg" },

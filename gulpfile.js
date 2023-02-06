@@ -8,12 +8,10 @@ import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import browsersync from 'browser-sync'
 import pug from 'gulp-pug'
-import htmlmin from 'gulp-htmlmin'
 import tailwindcss from 'tailwindcss'
 import tailwindNesting from 'tailwindcss/nesting/index.js'
 import postcss from 'gulp-postcss'
 import postcssImport from 'postcss-import'
-import postcssScss from 'postcss-scss'
 import autoprefixer from 'autoprefixer'
 import csso from 'postcss-csso'
 import purgecss from 'gulp-purgecss'
@@ -86,13 +84,7 @@ function browserSync() {
 // html assembly task
 function assemble() {
   return src(baseDir + '/pages/*.pug')
-    .pipe(pug({ pretty: true }))
-    .pipe(dest(distDir))
-}
-// html minify task
-function htmlminify() {
-  return src(distDir + '/*.html')
-    .pipe(htmlmin({ removeComments: true, collapseWhitespace: true }))
+    .pipe(pug( env.BUILD === 'production' ? {} : { pretty: true } ))
     .pipe(dest(distDir))
 }
 
@@ -131,12 +123,12 @@ function inlinescripts () {
 function styles() {
   if (env.BUILD === 'production') {
     return src(paths.styles.src)
-      .pipe(postcss(plugins, { parser: postcssScss }))
+      .pipe(postcss(plugins))
       .pipe(rename({ suffix: '.min', extname: '.css' }))
       .pipe(dest(paths.styles.dest))
   } else {
     return src(paths.styles.src, { sourcemaps: true })
-      .pipe(postcss(plugins, { parser: postcssScss }))
+      .pipe(postcss(plugins))
       .pipe(rename({ suffix: '.min', extname: '.css' }))
       .pipe(dest(paths.styles.dest, { sourcemaps: '.' }))
   }
@@ -190,7 +182,7 @@ function postclean() {
 
 // watch
 function watchDev() {
-  watch(`./${baseDir}/**/*.{html,htm,pug}`, { usePolling: true }, series(htmlbau, styles))
+  watch(`./${baseDir}/**/*.{html,htm,pug}`, { usePolling: true }, series(assemble, styles))
   watch(`./${baseDir}/assets/scripts/**/*.{js,mjs,cjs}`, { usePolling: true }, scripts)
   watch(`./${baseDir}/assets/styles/**/*.{sass,scss,css,pcss}`, { usePolling: true }, styles)
   watch(`./${baseDir}/assets/images/**/*.{jpg,png,svg,gif}`, { usePolling: true }, images)
@@ -199,11 +191,10 @@ function watchDev() {
 
 // export
 export { clean, images, csspurge, cssreject }
-export let htmlbau = env.BUILD === 'production' ? series(assemble, htmlminify) : assemble
 export let scripts = env.BUILD === 'production' ? series(compile, jsmin) : compile
 export let purge   = series(styles, cssreject, csspurge)
 export let inline  = series(inlinescripts, inlinestyles, postclean)
-export let assets  = series(assetscopy, htmlbau, styles, scripts)
+export let assets  = series(assetscopy, assemble, styles, scripts)
 export let serve   = parallel(browserSync, watchDev)
 export let dev     = series(clean, images, assets, serve)
 export let build   = series(clean, images, assets )

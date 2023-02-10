@@ -1,6 +1,6 @@
 header(class="relative h-[12rem] flex items-center animated fadeInUp")
   div(class='absolute w-full h-full overflow-hidden bg-gradient-to-r from-sky-800/50 to-indigo-800/50')
-    img(src="assets/images/ice.jpg", class='relative w-full h-full object-cover -z-10 blur-sm', alt="Images Cover")
+    img(src="/assets/images/ice.jpg", class='relative w-full h-full object-cover -z-10 blur-sm', alt="Images Cover")
   div(class="container px-4 mx-auto text-center text-white")
     h1.drop-shadow
       if title==='Home'
@@ -9,7 +9,7 @@ header(class="relative h-[12rem] flex items-center animated fadeInUp")
         span #{pageHeader}
     nav(class="drop-shadow hover:text-white")
       ul(class="flex justify-center gap-x-6")
-        each value, key in {'/': 'Home', 'post.html': 'Post', '404.html' :'Error 404'}
+        each value, key in {'/': 'Home', '/post': 'Post', '/404.html' :'Error 404'}
           li
             a(
               class="text-white font-medium uppercase hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4",

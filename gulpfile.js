@@ -83,7 +83,7 @@ function browserSync() {
 
 // html assembly task
 function assemble() {
-  return src(baseDir + '/pages/*.pug')
+  return src(baseDir + '/pages/**/*.pug', {base: baseDir + '/pages'})
     .pipe(pug( env.BUILD === 'production' ? {} : { pretty: true } ))
     .pipe(dest(distDir))
 }
@@ -111,7 +111,7 @@ function jsmin() {
 function inlinescripts () {
   return src(distDir + '/**/*.html', { base: distDir })
     .pipe(replace(
-      /<script src="assets\/js\/main.min.js"><\/script>/, () => {
+      /<script src="\/assets\/js\/main.min.js"><\/script>/, () => {
           const script = fs.readFileSync(distDir + '/assets/js/main.min.js', 'utf8')
           return '<script>' + script + '</script>'
       }
@@ -152,7 +152,7 @@ function cssreject() {
 function inlinestyles() {
   return src(distDir + '/**/*.html', { base: distDir })
     .pipe(replace(
-      /<link rel="stylesheet" href="assets\/css\/main.min.css">/, () => {
+      /<link rel="stylesheet" href="\/assets\/css\/main.min.css">/, () => {
           const style = fs.readFileSync(distDir + '/assets/css/main.min.css', 'utf8')
           return '<style>' + style + '</style>'
       }

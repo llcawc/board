@@ -2,6 +2,7 @@
 /.git/
 /node_modules/
 /**/debug.log
+/lib/
 
 # archive package
 /**/*.zip

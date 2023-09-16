@@ -1,7 +1,7 @@
 {
   "name": "board",
   "version": "0.0.1",
-  "date": "23.07.07",
+  "date": "23.09.16",
   "license": "MIT",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
@@ -16,15 +16,15 @@
     "build": "BUILD=production gulp build"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.8",
-    "@babel/preset-env": "^7.22.7",
+    "@babel/core": "^7.22.20",
+    "@babel/preset-env": "^7.22.20",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-commonjs": "^25.0.4",
     "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.1.0",
-    "autoprefixer": "^10.4.14",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "autoprefixer": "^10.4.15",
     "browser-sync": "^2.29.3",
-    "del": "^7.0.0",
+    "del": "^7.1.0",
     "gulp": "^4.0.2",
     "gulp-changed": "^4.0.3",
     "gulp-imagemin": "^8.0.0",
@@ -34,18 +34,18 @@
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
     "gulp-terser": "^2.1.0",
-    "postcss": "^8.4.25",
+    "postcss": "^8.4.29",
     "postcss-csso": "^6.0.1",
     "postcss-import": "^15.1.0",
-    "prettier": "^3.0.0",
-    "prettier-plugin-tailwindcss": "^0.3.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
     "pug": "^3.0.2",
-    "rollup": "^3.26.2",
-    "tailwindcss": "^3.3.2",
-    "terser": "^5.18.2"
+    "rollup": "^3.29.2",
+    "tailwindcss": "^3.3.3",
+    "terser": "^5.19.4"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "bootstrap-icons": "^1.10.5"
+    "bootstrap-icons": "^1.11.0"
   }
 }

@@ -9,7 +9,7 @@
     @apply rounded outline outline-2 outline-offset-4 outline-red-600/50;
   }
   body {
-    @apply min-w-[300px] overflow-x-hidden bg-zinc-900 text-zinc-500;
+    @apply min-w-[300px] bg-zinc-900 text-zinc-500;
     font-family: var(--font-family-sans);
   }
   code {

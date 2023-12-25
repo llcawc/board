@@ -1,118 +1,111 @@
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  normal;
+  font-family: "ps-JetBrainsMono";
+  font-style: normal;
   font-weight: 100;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-Thin.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  italic;
+  font-family: "ps-JetBrainsMono";
+  font-style: italic;
   font-weight: 100;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-ThinItalic.woff2") format("woff2");
 }
-
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  normal;
+  font-family: "ps-JetBrainsMono";
+  font-style: normal;
   font-weight: 200;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-ExtraLight.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  italic;
+  font-family: "ps-JetBrainsMono";
+  font-style: italic;
   font-weight: 200;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-ExtraLightItalic.woff2") format("woff2");
 }
-
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  normal;
+  font-family: "ps-JetBrainsMono";
+  font-style: normal;
   font-weight: 300;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-Light.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  italic;
+  font-family: "ps-JetBrainsMono";
+  font-style: italic;
   font-weight: 300;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-LightItalic.woff2") format("woff2");
 }
-
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  normal;
+  font-family: "ps-JetBrainsMono";
+  font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-Regular.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  italic;
+  font-family: "ps-JetBrainsMono";
+  font-style: italic;
   font-weight: 400;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-Italic.woff2") format("woff2");
 }
-
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  normal;
+  font-family: "ps-JetBrainsMono";
+  font-style: normal;
   font-weight: 500;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-Medium.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  italic;
+  font-family: "ps-JetBrainsMono";
+  font-style: italic;
   font-weight: 500;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-MediumItalic.woff2") format("woff2");
 }
-
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  normal;
+  font-family: "ps-JetBrainsMono";
+  font-style: normal;
   font-weight: 600;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-SemiBold.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  italic;
+  font-family: "ps-JetBrainsMono";
+  font-style: italic;
   font-weight: 600;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-SemiBoldItalic.woff2") format("woff2");
 }
-
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  normal;
+  font-family: "ps-JetBrainsMono";
+  font-style: normal;
   font-weight: 700;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  italic;
+  font-family: "ps-JetBrainsMono";
+  font-style: italic;
   font-weight: 700;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-BoldItalic.woff2") format("woff2");
 }
-
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  normal;
+  font-family: "ps-JetBrainsMono";
+  font-style: normal;
   font-weight: 800;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-ExtraBold.woff2") format("woff2");
 }
 @font-face {
-  font-family: 'pasJetBrainsMono';
-  font-style:  italic;
+  font-family: "ps-JetBrainsMono";
+  font-style: italic;
   font-weight: 800;
   font-display: swap;
   src: url("../fonts/JetBrains/JetBrainsMono-ExtraBoldItalic.woff2") format("woff2");

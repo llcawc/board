@@ -1,0 +1,20 @@
+# exclude file for rsync: put a + or - in front of the file with one space for explicit inclusion/exclusion
+# documentation: https://rsync.samba.org/documentation.html
+.git
+.vscode
+node_modules
+*.babelrc
+*.browserslistrc
+*.editorconfig
+*.exclude
+*.gitignore
+*.prettierrc
+gulpfile.js
+package-lock.json
+package.json
+tailwind.config.cjs
+readme.md
+**/npm-debug.log
+**/debug.log
+**/Thumbs.db
+**/*.DS_Store

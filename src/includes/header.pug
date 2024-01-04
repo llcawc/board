@@ -1,18 +1,17 @@
-header(class="relative h-[12rem] flex items-center animated fadeInUp")
-  div(class='absolute w-full h-full overflow-hidden bg-gradient-to-r from-sky-800/50 to-indigo-800/50')
-    img(src="/assets/images/ice.jpg", class='relative w-full h-full object-cover -z-10 blur-sm', alt="Images Cover")
-  div(class="container px-4 mx-auto text-center text-white")
+header.relative.flex.items-center.animated.fadeInUp(class='h-[12rem]')
+  .absolute.w-full.h-full.overflow-hidden.bg-gradient-to-r(class='from-sky-800/50 to-indigo-800/50')
+    img.relative.w-full.h-full.object-cover.-z-10.blur-sm(src='/assets/images/ice.jpg', alt='Images Cover')
+  .container.px-4.mx-auto.text-center.text-white
     h1.drop-shadow
       if title==='Home'
-        span.align-middle <i class="bi bi-house"></i> #{pageHeader}
+        span.align-middle <i class="bi bi-house"></i> #{ pageHeader }
       else
-        span #{pageHeader}
-    nav(class="drop-shadow hover:text-white")
-      ul(class="flex justify-center gap-x-6")
+        span #{ pageHeader }
+    nav.drop-shadow(class='hover:text-white')
+      ul.flex.justify-center.gap-x-6
         each value, key in {'/': 'Home', '/post': 'Post', '/404.html' :'Error 404'}
           li
-            a(
-              class="text-white font-medium uppercase hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4",
-              class=title===value?"underline underline-offset-4 decoration-4 decoration-red-500":"",
-              href=key
-            )= value
+            a.text-white.font-medium.uppercase(
+              class='hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4',
+              class=title === value ? 'underline underline-offset-4 decoration-4 decoration-red-500' : '',
+              href=key)= value

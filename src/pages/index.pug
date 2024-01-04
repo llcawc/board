@@ -4,25 +4,26 @@ block variables
   - var title = 'Home'
   - var pageHeader = 'Board Starter Template'
 
-prepend styles
-  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css")
+block prepend styles
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css')
 
 block header
   include ../includes/header.pug
 
 block main
-  main(class="container lg:max-w-5xl mx-auto p-4 animated fadeInUp")
+  main.container.mx-auto.p-4.animated.fadeInUp(class='lg:max-w-5xl')
     article
-      h1(class="my-4 text-center md:text-left")= 'Hello World! How are you?'
-      p(class="mb-4 indent-4 first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]") Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam voluptatum corrupti officia sit. Iste molestias autem amet, similique ea, expedita nemo, assumenda iure nihil mollitia earum quidem laborum voluptatum illo! Culpa quibusdam natus accusantium. Accusantium distinctio quaerat ut voluptate dolorem.
-      blockquote(class="relative ml-10 mr-6 my-4 before:absolute before:-top-1 before:-left-6 before:content-['i'] before:text-3xl before:font-bold before:font-serif before:text-red-700") Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint neque iure nobis enim praesentium. Ut.
-      p(class="mb-4 indent-4 first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]") Culpa dolorum quo ea ipsam totam odit soluta excepturi iste optio aperiam nihil doloremque harum vel praesentium iusto dolorem et consequuntur, tempore accusamus incidunt cumque eaque atque? Quod sunt tempora nobis harum neque, explicabo consequatur incidunt, sed possimus magni voluptates.
+      h1.my-4.text-center(class='md:text-left')= 'Hello World! How are you?'
+      p.mb-4.indent-4(class='first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]') Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam voluptatum corrupti officia sit. Iste molestias autem amet, similique ea, expedita nemo, assumenda iure nihil mollitia earum quidem laborum voluptatum illo! Culpa quibusdam natus accusantium. Accusantium distinctio quaerat ut voluptate dolorem.
+      blockquote.relative.ml-10.mr-6.my-4(
+        class='before:absolute before:-top-1 before:-left-6 before:content-[\'i\'] before:text-3xl before:font-bold before:font-serif before:text-red-700') Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint neque iure nobis enim praesentium. Ut.
+      p.mb-4.indent-4(class='first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]') Culpa dolorum quo ea ipsam totam odit soluta excepturi iste optio aperiam nihil doloremque harum vel praesentium iusto dolorem et consequuntur, tempore accusamus incidunt cumque eaque atque? Quod sunt tempora nobis harum neque, explicabo consequatur incidunt, sed possimus magni voluptates.
       p.mb-0 Run <code>npm</code> command:
       ul.mb-4
         li.ml-4 for development: <code>>> npm run dev</code>
         li.ml-4 for build: <code>>> npm run build</code>
-      div.text-right
-        a(href="/post") read more ...
+      .text-right
+        a(href='/post') read more ...
 
 block footer
   include ../includes/footer.pug

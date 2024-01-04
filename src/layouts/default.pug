@@ -3,19 +3,20 @@ block variables
   - var pageHeader = 'textheader'
 
 doctype html
-html(lang="ru")
+html(lang='ru')
   head
-    title Board • #{title}
-    meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="shortcut icon", href="/assets/images/favicon.svg", type="image/svg+xml")
-    meta(property="og:image", content="/assets/images/ice.jpg")
-    link(rel="preload", as="style", href="/assets/css/fonts.min.css")
-    link(rel="stylesheet", href="/assets/css/fonts.min.css", media="print", onload="this.media='all'")
+    title Board • #{ title }
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='shortcut icon', href='/assets/images/favicon.ico', type='image/x-icon')
+    link(rel='shortcut icon', href='/assets/images/favicon.svg', type='image/svg+xml')
+    meta(property='og:image', content='/assets/images/ice.jpg')
+    link(rel='preload', as='style', href='/assets/css/fonts.min.css')
+    link(rel='stylesheet', href='/assets/css/fonts.min.css', media='print', onload='this.media=\'all\'')
     block styles
-      link(rel="stylesheet", href="/assets/css/main.min.css")
+      link(rel='stylesheet', href='assets/css/main.min.css')
   body
-    div(class="wrapper transition-opacity duration-500 h-screen grid grid-cols-1 grid-rows-[2fr_8fr_2fr]")
+    .wrapper.transition-opacity.duration-500.h-screen.grid.grid-cols-1(class='grid-rows-[2fr_8fr_2fr]')
       block header
         header
       block main
@@ -24,4 +25,4 @@ html(lang="ru")
       block footer
         footer
     block scripts
-      script(src="/assets/js/main.min.js")
+      script(src='assets/js/main.min.js')

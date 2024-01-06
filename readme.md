@@ -1,12 +1,12 @@
 # Board - starter template for the front-end
 
-_Version 0.0.1 Date 24.01.05_
+_Version 0.0.1 Date 24.01.07_
 
 Starter uses Gulp as dependencies for front-end's works. For multi page development used PUG templating language. On board: [PUG](https://pugjs.org/api/getting-started.html) Templates, [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) and import suntax on base [PostCSS](https://github.com/postcss/postcss) witch Autoprefixer and minify plugins. Also used [Rollup](https://github.com/rollup/rollup) witch JSON plugins. Minify scripts: [Terser](https://github.com/terser/terser). Minify image: [Imagemin](https://github.com/imagemin/imagemin). Added a gulp script that allows you to embed the script and style in html.
 
 ## Getting started
 
-Install the [node](https://nodejs.org) and the [npm](https://www.npmjs.com/) package manager, clone this repository in project folder and type this command into the wsl or mac terminal:
+Install the [node](https://nodejs.org) and the npm package manager, clone this repository in project folder and type this command into the wsl or mac terminal:
 
 ```
 npm install
@@ -45,6 +45,12 @@ npm run serve
 npm run inline
 ```
 
+### Parse code pug files witch prettier.
+
+```
+npm run pug
+```
+
 ## Settings
 
 Use `gulpfile.js`, `package.json` and config files for change settings.
@@ -55,4 +61,4 @@ If you need to develop [bootstrap](https://getbootstrap.com/) or [bootstrap-icon
 
 ---
 
-Copyright&nbsp;&copy;2023 [llcawc](https://github.com/llcawc), MIT License. Made&nbsp;with&nbsp;<span style="color: #e60f0a;">&#10084;</span>&nbsp;for&nbsp;the&nbsp;best&nbsp;architecture.
+Copyright&nbsp;&copy;2024 [llcawc](https://github.com/llcawc), MIT License. Made&nbsp;with&nbsp;<span style="color: #e60f0a;">&#10084;</span>&nbsp;for&nbsp;the&nbsp;best&nbsp;architecture.

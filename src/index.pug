@@ -1,4 +1,4 @@
-extends ../layouts/default.pug
+extends layouts/default.pug
 
 block variables
   - var title = 'Home'
@@ -8,10 +8,10 @@ block prepend styles
   link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css')
 
 block header
-  include ../includes/header.pug
+  include includes/header.pug
 
 block main
-  main.container.mx-auto.p-4.animated.fadeInUp(class='lg:max-w-5xl')
+  main.container.mx-auto.p-4.animated.fadeIn(class='lg:max-w-5xl')
     article
       h1.my-4.text-center(class='md:text-left')= 'Hello World! How are you?'
       p.mb-4.indent-4(class='first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]') Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam voluptatum corrupti officia sit. Iste molestias autem amet, similique ea, expedita nemo, assumenda iure nihil mollitia earum quidem laborum voluptatum illo! Culpa quibusdam natus accusantium. Accusantium distinctio quaerat ut voluptate dolorem.
@@ -23,7 +23,7 @@ block main
         li.ml-4 for development: <code>>> npm run dev</code>
         li.ml-4 for build: <code>>> npm run build</code>
       .text-right
-        a(href='/post') read more ...
+        a(href='/post.html') read more ...
 
 block footer
-  include ../includes/footer.pug
+  include includes/footer.pug

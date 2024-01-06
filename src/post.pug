@@ -1,14 +1,14 @@
-extends ../../layouts/default.pug
+extends layouts/default.pug
 
 block variables
   - var title = 'Post'
   - var pageHeader = 'Cool Post'
 
 block header
-  include ../../includes/header.pug
+  include includes/header.pug
 
 block main
-  main.container.mx-auto.px-4.py-10.animated.fadeInUp
+  main.container.mx-auto.px-4.py-10.animated.fadeIn
     article.column
       h2 Vingardium leviossa
       p.mb-4.indent-6(class='first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]') Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eaque ipsa molestias, architecto eos accusamus! Iure fuga recusandae officia deserunt distinctio, consequuntur quo libero enim nulla consectetur nesciunt facilis voluptas alias quasi ea blanditiis in dicta. Aspernatur consectetur nemo accusantium hic, fuga earum nisi culpa similique voluptate nostrum, nobis et sed minus delectus repellendus at tenetur?
@@ -21,4 +21,4 @@ block main
         a(href='/') ... back
 
 block footer
-  include ../../includes/footer.pug
+  include includes/footer.pug

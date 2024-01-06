@@ -6,6 +6,7 @@ import { env } from 'process'
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import browsersync from 'browser-sync'
+const bs = browsersync.create()
 import pug from 'gulp-pug'
 import prettier from 'gulp-prettier'
 import tailwindcss from 'tailwindcss'
@@ -52,22 +53,21 @@ let paths = {
 
 //  server reload task
 function browserSync() {
-  browsersync.init({
+  bs.init({
     server: { baseDir: distDir },
     online: true,
     notify: false,
-    open: false,
   })
 }
 
 // html assembly task
 function htm() {
   if (env.BUILD === 'production') {
-    return src(baseDir + '/pages/**/*.pug', { base: baseDir + '/pages' })
+    return src(baseDir + '/*.pug', { base: baseDir })
       .pipe(pug())
       .pipe(dest(distDir))
   } else {
-    return src(baseDir + '/pages/**/*.pug', { base: baseDir + '/pages' })
+    return src(baseDir + '/*.pug', { base: baseDir })
       .pipe(pug())
       .pipe(prettier({ parser: 'html' }))
       .pipe(dest(distDir))
@@ -161,7 +161,7 @@ function watchDev() {
   watch(`./${baseDir}/assets/scripts/**/*.{js,mjs,cjs}`, { usePolling: true }, parallel(scripts))
   watch(`./${baseDir}/assets/styles/**/*.{sass,scss,css,pcss}`, { usePolling: true }, parallel(styles))
   watch(`./${baseDir}/assets/images/**/*.{jpg,png,svg,gif}`, { usePolling: true }, parallel(images))
-  watch(`./${baseDir}/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browsersync.reload)
+  watch(`./${distDir}/**/*.{${fileswatch}}`, { usePolling: true }).on('change', bs.reload)
 }
 
 // export

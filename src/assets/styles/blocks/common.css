@@ -2,8 +2,8 @@
 
 @layer base {
   :root {
-    --font-family-sans: 'ps-Inter', sans-serif;
-    --font-family-mono: 'ps-JetBrainsMono', monospace;
+    --font-family-sans: ps-Inter, sans-serif;
+    --font-family-mono: ps-JetBrainsMono, monospace;
   }
   *:focus-visible {
     @apply rounded outline outline-2 outline-offset-4 outline-red-600/50;

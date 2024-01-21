@@ -5,8 +5,6 @@ import fs from 'fs'
 import { env } from 'process'
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
-import browsersync from 'browser-sync'
-const bs = browsersync.create()
 import pug from 'gulp-pug'
 import prettier from 'gulp-prettier'
 import tailwindcss from 'tailwindcss'
@@ -27,6 +25,7 @@ import changed from 'gulp-changed'
 import replace from 'gulp-replace'
 import rename from 'gulp-rename'
 import { deleteAsync as del } from 'del'
+import server from 'passerve'
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -51,17 +50,13 @@ let paths = {
   },
 }
 
-//  server reload task
-function browserSync() {
-  bs.init({
-    server: { baseDir: distDir },
-    online: true,
-    notify: false,
-  })
+//  server browse task
+function browse() {
+  server()
 }
 
 // html assembly task
-function htm() {
+function assemble() {
   if (env.BUILD === 'production') {
     return src(baseDir + '/*.pug', { base: baseDir })
       .pipe(pug())
@@ -156,19 +151,18 @@ function copy() {
 }
 
 // watch
-function watchDev() {
-  watch(`./${baseDir}/**/*.{pug,htm,html}`, { usePolling: true }, parallel(htm, styles))
-  watch(`./${baseDir}/assets/scripts/**/*.{js,mjs,cjs}`, { usePolling: true }, parallel(scripts))
-  watch(`./${baseDir}/assets/styles/**/*.{sass,scss,css,pcss}`, { usePolling: true }, parallel(styles))
-  watch(`./${baseDir}/assets/images/**/*.{jpg,png,svg,gif}`, { usePolling: true }, parallel(images))
-  watch(`./${distDir}/**/*.{${fileswatch}}`, { usePolling: true }).on('change', bs.reload)
+function watchdev() {
+  watch(baseDir + '/**/*.{pug,htm,html}', parallel(assemble, styles))
+  watch(baseDir + '/assets/scripts/**/*.{js,mjs,cjs}', parallel(scripts))
+  watch(baseDir + '/assets/styles/**/*.{css,scss,sass}', parallel(styles))
+  watch(baseDir + '/assets/images/**/*.{jpg,png,svg,gif}', parallel(images))
 }
 
 // export
-export default htm
-export { copy, clean, images, htm, scripts, styles }
+export default assemble
+export { copy, clean, images, assemble, scripts, styles }
 export let inline = series(inlinescripts, inlinestyles, postclean)
-export let assets = series(copy, images, htm, scripts, styles)
-export let serve = parallel(browserSync, watchDev)
+export let assets = series(copy, images, assemble, scripts, styles)
+export let serve = parallel(watchdev, browse)
 export let dev = series(clean, assets, serve)
 export let build = series(clean, assets)

@@ -1,12 +1,6 @@
 # Node & project folders
 /.git/
-/.yarn/
-/dist/
 /node_modules/
-/**/package-lock.json
-/.pnp.cjs
-/**/yarn.lock
-/.pnp.loader.mjs
 /**/debug.log
 
 # archive package

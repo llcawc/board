@@ -61,4 +61,6 @@ If you need to develop [bootstrap](https://getbootstrap.com/) or [bootstrap-icon
 
 ---
 
-Copyright&nbsp;&copy;2024 [llcawc](https://github.com/llcawc), MIT License. Made&nbsp;with&nbsp;<span style="color: #e60f0a;">&#10084;</span>&nbsp;for&nbsp;the&nbsp;best&nbsp;architecture.
+MIT License
+
+Сopyright ©2024 pasmurno by [llcawc](https://github.com/llcawc). Made with <span style="color: rgb(230 15 10);">❤</span> for the best architecture

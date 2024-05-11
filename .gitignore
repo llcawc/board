@@ -6,6 +6,7 @@
 /**/pnpm-lock.yaml
 /**/package-lock.json
 /**/.env
+/**/.exclude
 
 # archive package
 /**/makefile

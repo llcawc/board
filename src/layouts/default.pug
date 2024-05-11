@@ -13,8 +13,8 @@ html(lang='ru')
     meta(property='og:image', content='assets/images/ice.jpg')
     link(rel='preload', as='style', href='assets/css/fonts.min.css')
     link(rel='stylesheet', href='assets/css/fonts.min.css', media='print', onload='this.media=\'all\'')
-    block styles
-      link(rel='stylesheet', href='assets/css/main.min.css')
+    link(rel='stylesheet', href='assets/css/main.min.css')
+    script(defer, src='assets/js/main.min.js')
   body
     .wrapper.transition-opacity.duration-500.h-screen.grid.grid-cols-1(class='grid-rows-[2fr_8fr_2fr]')
       block header
@@ -24,5 +24,3 @@ html(lang='ru')
           p It is default content in main section.
       block footer
         footer
-    block scripts
-      script(src='assets/js/main.min.js')

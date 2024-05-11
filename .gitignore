@@ -2,8 +2,13 @@
 /.git/
 /node_modules/
 /**/debug.log
+/**/yarn.lock
+/**/pnpm-lock.yaml
+/**/package-lock.json
+/**/.env
 
 # archive package
+/**/makefile
 /**/*.zip
 /**/*.7z
 

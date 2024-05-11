@@ -5,7 +5,7 @@ header.relative.flex.items-center(class='h-[12rem]')
     h1.drop-shadow.animated.fadeIn
       if title==='Home'
         span.align-middle
-          i.bi.bi-house
+          i.bi.bi-house.mr-4
           |#{ pageHeader }
       else
         span= pageHeader
@@ -15,6 +15,6 @@ header.relative.flex.items-center(class='h-[12rem]')
           li
             a.text-white.font-medium.uppercase(
               class='hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4',
-              class=title === value ? 'underline underline-offset-4 decoration-4 decoration-red-500' : '',
+              class=title === value ? 'underline underline-offset-4 decoration-4 decoration-accent' : '',
               href=key
             )= value

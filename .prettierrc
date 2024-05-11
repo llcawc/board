@@ -2,11 +2,18 @@
   "tabWidth": 2,
   "useTabs": false,
   "endOfLine": "lf",
-  "semi": false,
-  "singleQuote": true,
-  "jsxSingleQuote": true,
-  "printWidth": 120,
+  "printWidth": 160,
   "trailingComma": "es5",
   "bracketSpacing": true,
+  "overrides": [
+    {
+      "files": ["./**/*.{ts,js,jsx,mjs,cjs}"],
+      "options": {
+        "semi": false,
+        "singleQuote": true,
+        "jsxSingleQuote": true
+      }
+    }
+  ],
   "plugins": ["prettier-plugin-tailwindcss"]
 }

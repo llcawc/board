@@ -4,19 +4,16 @@ block variables
   - var title = 'Error 404'
   - var pageHeader = 'Error 404'
 
-block prepend styles
-  link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css')
-
 block main
   main.container.mx-auto.flex.justify-center.items-center
     section.mb-20(class='sm:w-80')
-      .flex.gap-2.text-white
-        h1.mb-0.animated.fadeIn <i class="bi bi-bell"></i>
+      .flex.gap-x-4(dark:text-white)
+        h1.mb-0.animated.fadeIn.text-5xl <i class="bi bi-bell"></i>
         .info
           h1.mb-0.animated.fadeIn Error 404!
           p.mb-4.animated.fadeIn Document not found.
-          a.inline-block.px-4.py-2.border.rounded-md.border-red-600.animated.fadeIn.slow.delay-1s(
-            class='hover:text-white hover:bg-red-600 hover:no-underline hover:duration-250 active:translate-y-0.5',
+          a.inline-block.px-4.py-2.border.rounded-md.border-accent.animated.fadeIn.slow(
+            class='hover:text-white hover:bg-accent hover:no-underline hover:duration-250 active:translate-y-0.5',
             href='/'
           )
             span.font-normal HOME

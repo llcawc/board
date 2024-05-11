@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "rootDir": "src/assets/ts",
+    "outDir": "src/assets/scripts",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "module": "ES2020",
+    // "resolveJsonModule": true,
+    // "moduleResolution": "Bundler",
+    // "sourceMap": true,
+    // "removeComments": true,
+    // "declaration": true,
+    "newLine": "lf",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src/assets/ts"],
+}

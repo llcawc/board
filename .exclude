@@ -2,22 +2,22 @@
 # documentation: https://rsync.samba.org/documentation.html
 /.git/
 /.vscode/
-/.yarn/
+/.osp/
 /node_modules/
 *.babelrc
 *.browserslistrc
 *.editorconfig
 *.exclude
 *.gitignore
-*.pnp.cjs
-*.pnp.loader.mjs
 *.prettierrc
 gulpfile.js
+makefile
 package.json
 package-lock.json
-readme.md
-tailwind.config.cjs
+pnpm-lock.yaml
 yarn.lock
+readme.md
+tailwind.config.js
 **/npm-debug.log
 **/debug.log
 **/Thumbs.db

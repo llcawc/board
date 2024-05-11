@@ -55,6 +55,4 @@ If you need to develop [bootstrap](https://getbootstrap.com/) or [bootstrap-icon
 
 ---
 
-MIT License
-
-Сopyright ©2024 pasmurno by [llcawc](https://github.com/llcawc). Made with <span style="color: rgb(230 15 10);">❤</span> for the best architecture
+MIT License. ©2024 pasmurno by [llcawc](https://github.com/llcawc). Made with <span style="color:red;">❤</span> to beautiful architecture

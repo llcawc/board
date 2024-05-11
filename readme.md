@@ -45,12 +45,6 @@ npm run serve
 npm run inline
 ```
 
-### Parse code pug files witch prettier.
-
-```
-npm run pug
-```
-
 ## Settings
 
 Use `gulpfile.js`, `package.json` and config files for change settings.

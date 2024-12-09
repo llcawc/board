@@ -1,15 +1,16 @@
 # Node & project folders
 /.git/
+/.osp/
 /node_modules/
 /**/debug.log
-/**/yarn.lock
-/**/pnpm-lock.yaml
-/**/package-lock.json
-/**/.env
-/**/.exclude
+yarn.lock
+pnpm-lock.yaml
+package-lock.json
+*.env
+*.exclude
+/**/makefile
 
 # archive package
-/**/makefile
 /**/*.zip
 /**/*.7z
 

@@ -1,0 +1,80 @@
+/* color mode switcher */
+
+html {
+  --cm-bg: #fff;
+  --cm-text: #232429;
+  --cm-focus: rgba(92 173 214 / 70%);
+}
+
+html.dark {
+  --cm-bg: #232429;
+  --cm-text: #deded3;
+  --cm-focus: rgba(0 136 204 / 70%);
+}
+
+.color-switcher {
+  position: absolute;
+  line-height: 0.8;
+  margin: 0;
+  padding: 0;
+  right: 20px;
+  top: 1.6rem;
+}
+
+.color-switcher button {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 4px solid var(--cm-bg);
+  background-color: var(--cm-bg);
+  box-shadow: none;
+}
+
+.color-switcher button svg {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  fill: var(--cm-text);
+}
+
+@media (width >= 480px) {
+  .color-switcher {
+    right: calc(50% - 480px / 2 + 20px);
+  }
+}
+
+@media (width >= 768px) {
+  .color-switcher {
+    right: calc(50% - 768px / 2 + 20px);
+  }
+}
+
+@media (width >= 1024px) {
+  .color-switcher {
+    right: calc(50% - 1024px / 2 + 20px);
+  }
+}
+
+@media (width >= 1280px) {
+  .color-switcher {
+    right: calc(50% - 1280px / 2 + 20px);
+  }
+}
+
+.color-switcher button:focus,
+.color-switcher button:focus-visible {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--cm-focus);
+}
+
+/* hidden class */
+.hidden {
+  display: none !important;
+}

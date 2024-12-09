@@ -1,28 +1,31 @@
 // gulpfile.js • frontend • pug • tailwindcss • pasmurno by llcawc • https://github.com/llcawc
 
 // import modules
-import fs from 'fs'
-import { env } from 'process'
+import fs from 'node:fs'
+import { env } from 'node:process'
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import pug from 'gulp-pug'
 import tailwindcss from 'tailwindcss'
 import tailwindNesting from 'tailwindcss/nesting/index.js'
 import postcss from 'gulp-postcss'
+import cssnano from 'cssnano'
 import postcssImport from 'postcss-import'
 import autoprefixer from 'autoprefixer'
-import csso from 'postcss-csso'
 import { rollup } from 'rollup'
 import { babel } from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
 import terser from '@rollup/plugin-terser'
-import imagemin, { gifsicle, mozjpeg, optipng, svgo } from 'gulp-imagemin'
-import changed from 'gulp-changed'
 import replace from 'gulp-replace'
-import rename from 'gulp-rename'
+import imagemin from 'imagemin'
+import imageminSvgo from 'imagemin-svgo'
+import imageminJpegtran from 'imagemin-jpegtran'
+import imageminPngquant from 'imagemin-pngquant'
 import { deleteAsync as del } from 'del'
 import server from 'passerve'
+import rename from './gulp/rename.js'
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -43,8 +46,15 @@ function assemble() {
 // scripts task
 async function scripts() {
   const bundle = await rollup({
-    input: baseDir + '/assets/scripts/main.js',
-    plugins: [resolve(), commonjs({ include: 'node_modules/**' }), babel({ babelHelpers: 'bundled' })],
+    input: baseDir + '/assets/ts/main.ts',
+    plugins: [
+      typescript({
+        compilerOptions: { rootDir: baseDir + '/assets/ts', lib: ['ESNext', 'DOM', 'DOM.Iterable'], target: 'ESNext' },
+      }),
+      resolve(),
+      commonjs({ include: 'node_modules/**' }),
+      babel({ babelHelpers: 'bundled' }),
+    ],
   })
   await bundle.write({
     file: distDir + '/assets/js/main.min.js',
@@ -71,7 +81,13 @@ function inlinescripts() {
 function styles() {
   const postConfig =
     env.BUILD === 'production'
-      ? [postcssImport, tailwindNesting, tailwindcss, autoprefixer, csso({ comments: false })]
+      ? [
+          postcssImport,
+          tailwindNesting,
+          tailwindcss,
+          autoprefixer,
+          cssnano({ preset: ['default', { discardComments: { removeAll: true } }] }),
+        ]
       : [postcssImport, tailwindNesting, tailwindcss]
   return src(baseDir + '/assets/styles/*.css', env.BUILD === 'production' ? {} : { sourcemaps: true })
     .pipe(postcss(postConfig))
@@ -92,26 +108,36 @@ function inlinestyles() {
 }
 
 // images task
-function images() {
-  return src(baseDir + '/assets/images/**/*.*', { base: baseDir, encoding: false })
-    .pipe(changed(distDir))
-    .pipe(
-      imagemin(
-        [
-          gifsicle({ interlaced: true }),
-          mozjpeg({ quality: 75, progressive: true }),
-          optipng({ optimizationLevel: 5 }),
-          svgo({ plugins: [{ name: 'preset-default', params: { overrides: { removeViewBox: false } } }] }),
+async function images() {
+  await imagemin([baseDir + '/assets/images/*.{svg,jpg,png}'], {
+    destination: distDir + '/assets/images',
+    plugins: [
+      imageminJpegtran(),
+      imageminPngquant({ quality: [0.6, 0.8] }),
+      imageminSvgo({
+        plugins: [
+          {
+            name: 'preset-default',
+            params: { overrides: { removeViewBox: false } },
+          },
         ],
-        { verbose: true }
-      )
-    )
-    .pipe(dest(distDir))
+      }),
+    ],
+  })
 }
 
 // clean task
 function clean() {
-  return del([ distDir + '/**', distDir + '/assets/**', '!' + distDir + '/assets', '!' + distDir + '/assets/images', ], { force: true })
+  return del(
+    [
+      distDir + '/**',
+      distDir + '/.htaccess',
+      distDir + '/assets/**',
+      '!' + distDir + '/assets',
+      '!' + distDir + '/assets/images',
+    ],
+    { force: true }
+  )
 }
 
 // post clean task
@@ -119,26 +145,24 @@ function postclean() {
   return del([distDir + '/assets/css/main.min.css', distDir + '/assets/js'])
 }
 
-// bootstrap icons font copy task
-function bifont() {
-  return src(baseDir + '/libs/bootstrap-icons/font/fonts/*.woff2', { encoding: false }).pipe(rename({ basename: 'bi-font' })).pipe(dest(baseDir + '/assets/fonts/biFont'))
-}
-
 // copy task
 function copy() {
-  return src([ baseDir + '/assets/fonts/**/*.*', baseDir + `/.htaccess`, ], { base: baseDir, encoding: false }).pipe(dest(distDir))
+  return src([baseDir + '/assets/fonts/**/*.*', baseDir + `/.htaccess`, baseDir + `/assets/images/**/*.ico`], {
+    base: baseDir,
+    encoding: false,
+  }).pipe(dest(distDir))
 }
 
 // watch
 function watcher() {
-  watch(baseDir + '/**/*.{pug,htm,html}', { usePolling: true }, parallel(assemble, styles))
-  watch(baseDir + '/assets/scripts/**/*.{js,mjs,cjs}', { usePolling: true }, parallel(scripts))
-  watch(baseDir + '/assets/styles/**/*.{css,scss,sass}', { usePolling: true }, parallel(styles))
-  watch(baseDir + '/assets/images/**/*.{jpg,png,svg,gif}', { usePolling: true }, parallel(images))
+  watch(baseDir + '/**/*.{pug,htm,html}', parallel(assemble, styles))
+  watch(baseDir + '/assets/scripts/**/*.{js,mjs,cjs}', scripts)
+  watch(baseDir + '/assets/styles/**/*.{css,scss,sass}', styles)
+  watch(baseDir + '/assets/images/**/*.{jpg,png,svg,gif}', images)
 }
 
 // export
-export { bifont, copy, clean, images, assemble, scripts, styles }
+export { clean, copy, images, assemble, postclean, scripts, styles }
 export let inline = series(inlinescripts, inlinestyles, postclean)
 export let assets = series(copy, images, assemble, scripts, styles)
 export let serve = parallel(watcher, browse)

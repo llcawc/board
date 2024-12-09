@@ -6,15 +6,15 @@
 
 @font-face {
   font-display: block;
-  font-family: "bi-font"; /* new name */
-  src: url("../fonts/biFont/bi-font.woff2") format("woff2"); /* now one font */
+  font-family: "bootstrap-icons";
+  src: url("../fonts/biFont/bootstrap-icons.woff2") format("woff2");
 }
 
 .bi::before,
 [class^="bi-"]::before,
 [class*=" bi-"]::before {
   display: inline-block;
-  font-family: "bi-font" !important; /* old bootstrap-icons !important; */
+  font-family: "bootstrap-icons" !important;
   font-style: normal;
   font-weight: normal !important;
   font-variant: normal;

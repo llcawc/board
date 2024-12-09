@@ -2,7 +2,7 @@
   "tabWidth": 2,
   "useTabs": false,
   "endOfLine": "lf",
-  "printWidth": 160,
+  "printWidth": 120,
   "trailingComma": "es5",
   "bracketSpacing": true,
   "overrides": [
@@ -14,6 +14,5 @@
         "jsxSingleQuote": true
       }
     }
-  ],
-  "plugins": ["prettier-plugin-tailwindcss"]
+  ]
 }

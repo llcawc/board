@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "rootDir": "src/assets/ts",
-    "outDir": "src/assets/scripts",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-    "module": "ES2020",
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "rootDir": "./",
+    "outDir": "./",
+    // "skipLibCheck": true,
     // "resolveJsonModule": true,
-    // "moduleResolution": "Bundler",
     // "sourceMap": true,
     // "removeComments": true,
-    // "declaration": true,
+    "declaration": true,
     "newLine": "lf",
     "strict": true,
     "esModuleInterop": true,
@@ -20,5 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/assets/ts"],
+  "include": ["./"],
+  "exclude": []
 }

@@ -6,6 +6,5 @@
 
 /* user other custom styles */
 @import 'blocks/animate.css';
-@import "blocks/colormode.css";
 @import 'blocks/common.css';
 @import 'blocks/home.css';

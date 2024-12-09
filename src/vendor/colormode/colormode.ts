@@ -6,7 +6,6 @@
  *
  * @description color-switcher script for the dual dark-light color theme switch
  * @description First launch by dedault theme is system default theme
- * @export colorSwitcher(): void
  */
 function colorSwitcher(): void {
   const getStoredTheme = (): string | null => localStorage.getItem('theme') // take a theme name from the local storage
@@ -89,17 +88,17 @@ function colorSwitcher(): void {
       ev.preventDefault()
       let currentMode = ''
       let theme = ''
-        // get the attribute name of a non-hidden button
-        ;[...Array.from(buttonSwicher.children)].forEach((el) => {
-          if (!el.classList.contains('hidden')) {
-            let attr = el.attributes.getNamedItem('data-mode')
-            if (attr) {
-              currentMode = attr.value
-            } else {
-              throw new Error('!!! In node svg switch button attribute "data-mode" was not found !!!')
-            }
+      // get the attribute name of a non-hidden button
+      ;[...Array.from(buttonSwicher.children)].forEach((el) => {
+        if (!el.classList.contains('hidden')) {
+          let attr = el.attributes.getNamedItem('data-mode')
+          if (attr) {
+            currentMode = attr.value
+          } else {
+            throw new Error('!!! In node svg switch button attribute "data-mode" was not found !!!')
           }
-        })
+        }
+      })
       // change the color mode around and set a new color mode
       switch (currentMode) {
         case 'light':

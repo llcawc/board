@@ -31,7 +31,6 @@
     "gulp": "^5.0.0",
     "gulp-postcss": "^10.0.0",
     "gulp-pug": "^5.0.0",
-    "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
     "imagemin": "^9.0.0",
     "imagemin-jpegtran": "^8.0.0",

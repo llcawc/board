@@ -12,8 +12,6 @@ block main
         .info
           h1.mb-0.animated.fadeIn Error 404!
           p.mb-4.animated.fadeIn Document not found.
-          a.inline-block.px-4.py-2.border.rounded-md.border-accent.animated.fadeIn.slow(
-            class='hover:text-white hover:bg-accent hover:no-underline hover:duration-250 active:translate-y-0.5',
-            href='/'
-          )
-            span.font-normal HOME
+          a(class="block hover:no-underline" href='/')
+            button.block.text-accent.px-4.py-2.border.rounded-md.border-accent.animated.fadeIn.slow.cursor-pointer(class="hover:text-white hover:bg-accent active:translate-y-0.5 transition")
+              span.font-normal HOME

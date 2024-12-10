@@ -15,8 +15,8 @@ html(lang='ru')
     link(rel='stylesheet', href='assets/css/fonts.min.css', media='print', onload='this.media=\'all\'')
     link(rel='stylesheet', href='assets/css/main.min.css')
     script(defer, src='assets/js/main.min.js')
-  body
-    .wrapper.transition-opacity.duration-500.h-screen.grid.grid-cols-1(class='grid-rows-[2fr_8fr_2fr]')
+  body(class="scheme-light-dark dark:scheme-dark")
+    .transition-opacity.duration-500.h-screen.grid.grid-cols-1.mx-auto(class='grid-rows-[2fr_8fr_2fr]')
       block header
         header
       block main

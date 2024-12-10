@@ -6,12 +6,11 @@ import { env } from 'node:process'
 import gulp from 'gulp'
 const { src, dest, parallel, series, watch } = gulp
 import pug from 'gulp-pug'
-import tailwindcss from 'tailwindcss'
-import tailwindNesting from 'tailwindcss/nesting/index.js'
-import postcss from 'gulp-postcss'
 import cssnano from 'cssnano'
-import postcssImport from 'postcss-import'
-import autoprefixer from 'autoprefixer'
+import postcss from 'gulp-postcss'
+import tailwindcssPostcss from '@tailwindcss/postcss'
+// import postcssImport from 'postcss-import'
+// import autoprefixer from 'autoprefixer'
 import { rollup } from 'rollup'
 import { babel } from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
@@ -24,17 +23,11 @@ import imageminSvgo from 'imagemin-svgo'
 import imageminJpegtran from 'imagemin-jpegtran'
 import imageminPngquant from 'imagemin-pngquant'
 import { deleteAsync as del } from 'del'
-import server from 'passerve'
 import rename from './gulp/rename.js'
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
 const distDir = 'dist' // Distribution folder for uploading to the site
-
-//  server browse task
-function browse() {
-  server()
-}
 
 // html assembly task
 function assemble() {
@@ -78,18 +71,13 @@ function inlinescripts() {
 }
 
 // styles task
-function styles() {
+async function styles() {
   const postConfig =
     env.BUILD === 'production'
-      ? [
-          postcssImport,
-          tailwindNesting,
-          tailwindcss,
-          autoprefixer,
-          cssnano({ preset: ['default', { discardComments: { removeAll: true } }] }),
-        ]
-      : [postcssImport, tailwindNesting, tailwindcss]
-  return src(baseDir + '/assets/styles/*.css', env.BUILD === 'production' ? {} : { sourcemaps: true })
+      ? [tailwindcssPostcss(), cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })]
+      : [tailwindcssPostcss()]
+
+  return src(baseDir + '/assets/styles/{main,fonts}.css', env.BUILD === 'production' ? {} : { sourcemaps: true })
     .pipe(postcss(postConfig))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(distDir + '/assets/css', env.BUILD === 'production' ? {} : { sourcemaps: '.' }))
@@ -156,15 +144,14 @@ function copy() {
 // watch
 function watcher() {
   watch(baseDir + '/**/*.{pug,htm,html}', parallel(assemble, styles))
-  watch(baseDir + '/assets/scripts/**/*.{js,mjs,cjs}', scripts)
+  watch(baseDir + '/assets/scripts/**/*.{js,ts,mjs,cjs}', scripts)
   watch(baseDir + '/assets/styles/**/*.{css,scss,sass}', styles)
-  watch(baseDir + '/assets/images/**/*.{jpg,png,svg,gif}', images)
+  watch(baseDir + '/assets/images/**/*.{jpg,png,svg}', images)
 }
 
 // export
 export { clean, copy, images, assemble, postclean, scripts, styles }
 export let inline = series(inlinescripts, inlinestyles, postclean)
-export let assets = series(copy, images, assemble, scripts, styles)
-export let serve = parallel(watcher, browse)
-export let dev = series(clean, assets, serve)
+export let assets = parallel(copy, images, assemble, scripts, styles)
+export let dev = series(clean, assets, watcher)
 export let build = series(clean, assets)

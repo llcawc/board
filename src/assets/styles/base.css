@@ -1,0 +1,34 @@
+/* base.css */
+@import "tailwindcss";
+@variant dark (&:where(.dark, .dark *));
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --default-font-family: ps-Inter, sans-serif;
+  --default-mono-font-family: ps-JetBrainsMono, monospace;
+  --color-accent: var(--color-blue-500);
+  --color-dark: var(--color-zinc-900);
+}
+
+@layer base {
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-accent/50 rounded-xs;
+  }
+  body {
+    @apply min-w-75 dark:bg-dark dark:text-zinc-500;
+  }
+  h1,
+  h2 {
+    @apply mb-4 font-semibold dark:text-white;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  a {
+    @apply font-medium dark:text-white;
+  }
+}

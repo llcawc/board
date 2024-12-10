@@ -1,10 +1,10 @@
 {
   "name": "board",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "author": "pasmurno by llcawc",
   "homepage": "https://github.com/llcawc",
-  "description": "starter template / boilerplate / 24.12.09",
+  "description": "starter template / boilerplate / 24.12.10",
   "type": "module",
   "scripts": {
     "tsc": "tsc -p ./gulp/tsconfig.json",

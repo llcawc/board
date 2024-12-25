@@ -1,6 +1,10 @@
 // main.js
 
-import './year.js'
-import './colormode.js'
+import { year } from './year'
+import { colorSwitcher } from './colormode'
 
-console.log('process running...')
+document.addEventListener('DOMContentLoaded', () => {
+  year()
+  colorSwitcher()
+  console.log('process running...')
+})

@@ -9,8 +9,6 @@ import pug from 'gulp-pug'
 import cssnano from 'cssnano'
 import postcss from 'gulp-postcss'
 import tailwindcssPostcss from '@tailwindcss/postcss'
-// import postcssImport from 'postcss-import'
-// import autoprefixer from 'autoprefixer'
 import { rollup } from 'rollup'
 import { babel } from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
@@ -18,12 +16,9 @@ import resolve from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import terser from '@rollup/plugin-terser'
 import replace from 'gulp-replace'
-import imagemin from 'imagemin'
-import imageminSvgo from 'imagemin-svgo'
-import imageminJpegtran from 'imagemin-jpegtran'
-import imageminPngquant from 'imagemin-pngquant'
+import imagemin from 'gulp-img'
 import { deleteAsync as del } from 'del'
-import rename from './gulp/rename.js'
+import rename from 'gulp-ren'
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -42,7 +37,11 @@ async function scripts() {
     input: baseDir + '/assets/ts/main.ts',
     plugins: [
       typescript({
-        compilerOptions: { rootDir: baseDir + '/assets/ts', lib: ['ESNext', 'DOM', 'DOM.Iterable'], target: 'ESNext' },
+        compilerOptions: {
+          rootDir: baseDir + '/assets/ts',
+          lib: ['ESNext', 'DOM', 'DOM.Iterable'],
+          target: 'ESNext',
+        },
       }),
       resolve(),
       commonjs({ include: 'node_modules/**' }),
@@ -74,10 +73,16 @@ function inlinescripts() {
 async function styles() {
   const postConfig =
     env.BUILD === 'production'
-      ? [tailwindcssPostcss(), cssnano({ preset: ['default', { discardComments: { removeAll: true } }] })]
+      ? [
+          tailwindcssPostcss(),
+          cssnano({ preset: ['default', { discardComments: { removeAll: true } }] }),
+        ]
       : [tailwindcssPostcss()]
 
-  return src(baseDir + '/assets/styles/{main,fonts}.css', env.BUILD === 'production' ? {} : { sourcemaps: true })
+  return src(
+    baseDir + '/assets/styles/main.css',
+    env.BUILD === 'production' ? {} : { sourcemaps: true }
+  )
     .pipe(postcss(postConfig))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(distDir + '/assets/css', env.BUILD === 'production' ? {} : { sourcemaps: '.' }))
@@ -96,22 +101,10 @@ function inlinestyles() {
 }
 
 // images task
-async function images() {
-  await imagemin([baseDir + '/assets/images/*.{svg,jpg,png}'], {
-    destination: distDir + '/assets/images',
-    plugins: [
-      imageminJpegtran(),
-      imageminPngquant({ quality: [0.6, 0.8] }),
-      imageminSvgo({
-        plugins: [
-          {
-            name: 'preset-default',
-            params: { overrides: { removeViewBox: false } },
-          },
-        ],
-      }),
-    ],
-  })
+function images() {
+  return src(baseDir + '/assets/images/**/*.*', { encoding: false })
+    .pipe(imagemin())
+    .pipe(dest(distDir + '/assets/images'))
 }
 
 // clean task
@@ -119,7 +112,6 @@ function clean() {
   return del(
     [
       distDir + '/**',
-      distDir + '/.htaccess',
       distDir + '/assets/**',
       '!' + distDir + '/assets',
       '!' + distDir + '/assets/images',
@@ -130,15 +122,19 @@ function clean() {
 
 // post clean task
 function postclean() {
-  return del([distDir + '/assets/css/main.min.css', distDir + '/assets/js'])
+  return del([distDir + '/assets/css', distDir + '/assets/js'])
 }
 
 // copy task
 function copy() {
-  return src([baseDir + '/assets/fonts/**/*.*', baseDir + `/.htaccess`, baseDir + `/assets/images/**/*.ico`], {
-    base: baseDir,
-    encoding: false,
-  }).pipe(dest(distDir))
+  return src(
+    [
+      baseDir + '/assets/fonts/bootstrap-icons/*.woff*',
+      baseDir + '/assets/fonts/Inter/*.woff*',
+      baseDir + '/assets/fonts/JetBrains/*.woff*',
+    ],
+    { encoding: false }
+  ).pipe(dest(distDir + '/assets/fonts'))
 }
 
 // watch

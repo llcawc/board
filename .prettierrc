@@ -2,7 +2,7 @@
   "tabWidth": 2,
   "useTabs": false,
   "endOfLine": "lf",
-  "printWidth": 120,
+  "printWidth": 100,
   "trailingComma": "es5",
   "bracketSpacing": true,
   "overrides": [

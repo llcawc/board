@@ -7,7 +7,7 @@
  * @description color-switcher script for the dual dark-light color theme switch
  * @description First launch by dedault theme is system default theme
  */
-function colorSwitcher(): void {
+export function colorSwitcher(): void {
   const getStoredTheme = (): string | null => localStorage.getItem('theme') // take a theme name from the local storage
   const setStoredTheme = (theme: string): void => localStorage.setItem('theme', theme) // write the name of the theme to the local storage
   const removeStoredTheme = (): void => localStorage.removeItem('theme') // remove the key in the local storage
@@ -114,4 +114,4 @@ function colorSwitcher(): void {
   })
 }
 // run function colorSwitcher() after DOM is fully loaded
-document.addEventListener('DOMContentLoaded', colorSwitcher)
+// document.addEventListener('DOMContentLoaded', colorSwitcher)

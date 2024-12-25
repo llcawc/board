@@ -7,7 +7,9 @@
 @font-face {
   font-display: block;
   font-family: "bootstrap-icons";
-  src: url("../fonts/biFont/bootstrap-icons.woff2") format("woff2");
+  src:
+    url("../fonts/bootstrap-icons.woff2?24e3eb84d0bcaf83d77f904c78ac1f47") format("woff2"),
+    url("../fonts/bootstrap-icons.woff?24e3eb84d0bcaf83d77f904c78ac1f47") format("woff");
 }
 
 .bi::before,
@@ -20,11 +22,15 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  vertical-align: -.125em;
+  vertical-align: -0.125em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* I only include what I need */
-.bi-bell::before { content: "\f18a"; }
-.bi-house::before { content: "\f425"; }
+.bi-bell::before {
+  content: "\f18a";
+}
+.bi-house::before {
+  content: "\f425";
+}

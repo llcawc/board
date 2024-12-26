@@ -1,4 +1,4 @@
 /* main.css */
-@import "./base";
-@import "./fonts";
-@import "./animate";
+@import "./base.css";
+@import "./fonts.css";
+@import "./animate.css";

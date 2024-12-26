@@ -1,24 +1,24 @@
 extends layouts/default.pug
 
 block variables
-  - var title = 'Home'
-  - var pageHeader = 'Board Starter Template'
+  - var title = "Home";
+  - var pageHeader = "Board Starter Template";
 
 block header
   include includes/header.pug
 
 block main
-  main.max-w-200.mx-auto.p-4.animated.fadeIn
-    article.prose(class='dark:prose-invert')
-      h1.mt-8.text-center(class='md:text-left') Hello World! How are you?
-      p.indent-4(class='first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]') Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam voluptatum corrupti officia sit. Iste molestias autem amet, similique ea, expedita nemo, assumenda iure nihil mollitia earum quidem laborum voluptatum illo! Culpa quibusdam natus accusantium. Accusantium distinctio quaerat ut voluptate dolorem.
+  main.animated.fadeIn.mx-auto.max-w-200.p-4
+    article.prose(class="dark:prose-invert")
+      h1.mt-8.text-center(class="md:text-left") Hello World! How are you?
+      p.indent-4(class="first-letter:mr-[2px] first-letter:text-2xl first-letter:font-black") Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam voluptatum corrupti officia sit. Iste molestias autem amet, similique ea, expedita nemo, assumenda iure nihil mollitia earum quidem laborum voluptatum illo! Culpa quibusdam natus accusantium. Accusantium distinctio quaerat ut voluptate dolorem.
       blockquote.ml-8 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint neque iure nobis enim praesentium. Ut.
-      p.indent-4(class='first-letter:font-black first-letter:text-2xl first-letter:mr-[2px]') Culpa dolorum quo ea ipsam totam odit soluta excepturi iste optio aperiam nihil doloremque harum vel praesentium iusto dolorem et consequuntur, tempore accusamus incidunt cumque eaque atque? Quod sunt tempora nobis harum neque, explicabo consequatur incidunt, sed possimus magni voluptates.
+      p.indent-4(class="first-letter:mr-[2px] first-letter:text-2xl first-letter:font-black") Culpa dolorum quo ea ipsam totam odit soluta excepturi iste optio aperiam nihil doloremque harum vel praesentium iusto dolorem et consequuntur, tempore accusamus incidunt cumque eaque atque? Quod sunt tempora nobis harum neque, explicabo consequatur incidunt, sed possimus magni voluptates.
       p Run <code>pnpm</code> command: <br>
         span.ml-6 =&gt; for development: &gt;&gt;<code>pnpm dev</code><br>
         span.ml-6 =&gt; for build: &gt;&gt;<code>pnpm build</code>
       .text-right
-        a(href='/post.html') read more ...
+        a(href="/post.html") read more ...
 
 block footer
   include includes/footer.pug

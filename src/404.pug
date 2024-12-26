@@ -1,17 +1,19 @@
 extends layouts/default.pug
 
 block variables
-  - var title = 'Error 404'
-  - var pageHeader = 'Error 404'
+  - var title = "Error 404";
+  - var pageHeader = "Error 404";
 
 block main
-  main.container.mx-auto.flex.justify-center.items-center
-    section.mb-20(class='sm:w-80')
+  main.container.mx-auto.flex.items-center.justify-center
+    section.mb-20(class="sm:w-80")
       .flex.gap-x-4(dark:text-white)
-        h1.mb-0.animated.fadeIn.text-5xl <i class="bi bi-bell"></i>
+        h1.animated.fadeIn.mb-0.text-5xl <i class="bi bi-bell"></i>
         .info
-          h1.mb-0.animated.fadeIn Error 404!
-          p.mb-4.animated.fadeIn Document not found.
-          a(class="block hover:no-underline" href='/')
-            button.block.text-accent.px-4.py-2.border.rounded-md.border-accent.animated.fadeIn.slow.cursor-pointer(class="hover:text-white hover:bg-accent active:translate-y-0.5 transition")
+          h1.animated.fadeIn.mb-0 Error 404!
+          p.animated.fadeIn.mb-4 Document not found.
+          a.block(class="hover:no-underline", href="/")
+            button.text-accent.border-accent.animated.fadeIn.slow.block.cursor-pointer.rounded-md.border.px-4.py-2.transition(
+              class="hover:bg-accent hover:text-white active:translate-y-0.5"
+            )
               span.font-normal HOME

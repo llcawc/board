@@ -14,5 +14,10 @@
         "jsxSingleQuote": true
       }
     }
+  ],
+  "plugins": [
+    "@prettier/plugin-pug",
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-tailwindcss"
   ]
 }

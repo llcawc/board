@@ -1,8 +1,8 @@
 /* animate.css */
+
 /* https://github.com/animate-css/animate.css/ */
 
 @layer base {
-
   :root {
     --animate-duration: 1s;
     --animate-delay: 1s;
@@ -11,7 +11,6 @@
 }
 
 @layer utilities {
-
   .animated {
     animation-duration: var(--animate-duration);
     animation-fill-mode: both;
@@ -76,7 +75,7 @@
       animation-iteration-count: 1 !important;
     }
 
-    .animated[class*='Out'] {
+    .animated[class*="Out"] {
       opacity: 0;
     }
   }

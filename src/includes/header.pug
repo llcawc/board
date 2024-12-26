@@ -1,20 +1,23 @@
-header.relative.flex.items-center(class='h-[12rem]')
-  .absolute.w-full.h-full.overflow-hidden.bg-gradient-to-r(class='from-sky-800/50 to-indigo-800/50')
-    img.relative.w-full.h-full.object-cover.-z-10.blur-sm(src='/assets/images/ice.jpg', alt='Images Cover')
-  .container.px-4.mx-auto.text-center.text-white
-    h1.drop-shadow.animated.fadeIn
+header.relative.flex.items-center(class="h-[12rem]")
+  .absolute.h-full.w-full.overflow-hidden.bg-gradient-to-r(class="from-sky-800/50 to-indigo-800/50")
+    img.relative.-z-10.h-full.w-full.object-cover.blur-sm(
+      src="/assets/images/ice.jpg",
+      alt="Images Cover"
+    )
+  .container.mx-auto.px-4.text-center.text-white
+    h1.animated.fadeIn.drop-shadow
       if title==='Home'
         span.align-middle
           i.bi.bi-house.mr-4
-          |#{ pageHeader }
+          | #{ pageHeader }
       else
         span= pageHeader
-    nav.drop-shadow(class='hover:text-white')
-      ul.flex.justify-center.gap-x-6.animated.fadeIn
+    nav.drop-shadow(class="hover:text-white")
+      ul.animated.fadeIn.flex.justify-center.gap-x-6
         each value, key in {'/': 'Home', '/post.html': 'Post', '/404.html' :'Error 404'}
           li
-            a.text-white.font-medium.uppercase(
-              class='hover:text-white hover:underline hover:underline-offset-4 hover:decoration-4',
-              class=title === value ? 'underline underline-offset-4 decoration-4 decoration-accent' : '',
+            a.font-medium.text-white.uppercase(
+              class="hover:text-white hover:underline hover:decoration-4 hover:underline-offset-4",
+              class=title === value ? "underline decoration-accent" : " decoration-4 underline-offset-4",
               href=key
             )= value

@@ -1,24 +1,24 @@
 // gulpfile.js • frontend • pug • tailwindcss • pasmurno by llcawc • https://github.com/llcawc
 
 // import modules
-import fs from 'node:fs'
-import { env } from 'node:process'
-import gulp from 'gulp'
-const { src, dest, parallel, series, watch } = gulp
-import pug from 'gulp-pug'
-import cssnano from 'cssnano'
-import postcss from 'gulp-postcss'
-import tailwindcssPostcss from '@tailwindcss/postcss'
-import { rollup } from 'rollup'
 import { babel } from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
 import terser from '@rollup/plugin-terser'
-import replace from 'gulp-replace'
-import imagemin from 'gulp-img'
+import typescript from '@rollup/plugin-typescript'
+import tailwindcssPostcss from '@tailwindcss/postcss'
+import cssnano from 'cssnano'
 import { deleteAsync as del } from 'del'
+import gulp from 'gulp'
+import imagemin from 'gulp-img'
+import postcss from 'gulp-postcss'
+import pug from 'gulp-pug'
 import rename from 'gulp-ren'
+import replace from 'gulp-replace'
+import fs from 'node:fs'
+import { env } from 'node:process'
+import { rollup } from 'rollup'
+const { src, dest, parallel, series, watch } = gulp
 
 // variables & path
 const baseDir = 'src' // Base directory path without «/» at the end
@@ -140,13 +140,13 @@ function copy() {
 // watch
 function watcher() {
   watch(baseDir + '/**/*.{pug,htm,html}', parallel(assemble, styles))
-  watch(baseDir + '/assets/scripts/**/*.{js,ts,mjs,cjs}', scripts)
+  watch(baseDir + '/assets/ts/**/*.{js,ts,mjs,cjs}', scripts)
   watch(baseDir + '/assets/styles/**/*.{css,scss,sass}', styles)
   watch(baseDir + '/assets/images/**/*.{jpg,png,svg}', images)
 }
 
 // export
-export { clean, copy, images, assemble, postclean, scripts, styles }
+export { assemble, clean, copy, images, postclean, scripts, styles }
 export let inline = series(inlinescripts, inlinestyles, postclean)
 export let assets = parallel(copy, images, assemble, scripts, styles)
 export let dev = series(clean, assets, watcher)

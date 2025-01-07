@@ -1,8 +1,11 @@
-extends layouts/default.pug
+extends ../layouts/main.pug
 
 block variables
-  - var title = "Error 404";
-  - var pageHeader = "Error 404";
+  - const title = "Error 404";
+  - const page = "404";
+
+block header
+  header
 
 block main
   main.container.mx-auto.flex.items-center.justify-center
@@ -17,3 +20,6 @@ block main
               class="hover:bg-accent hover:text-white active:translate-y-0.5"
             )
               span.font-normal HOME
+
+block footer
+  footer

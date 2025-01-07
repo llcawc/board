@@ -1,11 +1,9 @@
-extends layouts/default.pug
+extends ../layouts/main.pug
 
 block variables
-  - var title = "Post";
-  - var pageHeader = "Cool Post";
-
-block header
-  include includes/header.pug
+  - const title = "Post";
+  - const page = "post";
+  - const pageHeader = "Cool Post";
 
 block main
   main.animated.fadeIn.mx-auto.w-full.max-w-200.px-4.py-10
@@ -19,6 +17,3 @@ block main
       p.mb-4.indent-6(class="first-letter:mr-[2px] first-letter:text-2xl first-letter:font-black") Deleniti quam, rem officiis possimus blanditiis, esse praesentium harum placeat autem laudantium sequi aspernatur quidem. Quidem accusantium culpa necessitatibus quis ducimus ad esse porro harum ex incidunt ea commodi temporibus iusto nesciunt fugit, magni eligendi perspiciatis cumque. Rerum quam ipsum voluptatum, impedit rem, error, a totam unde et asperiores mollitia quae consequatur? Nulla quae molestias quam?
       .text-right
         a(href="/") ... back
-
-block footer
-  include includes/footer.pug

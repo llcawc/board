@@ -1,11 +1,9 @@
-extends layouts/default.pug
+extends ../layouts/main.pug
 
 block variables
-  - var title = "Home";
-  - var pageHeader = "Board Starter Template";
-
-block header
-  include includes/header.pug
+  - const title = "Home";
+  - const page = "index";
+  - const pageHeader = "Board Starter";
 
 block main
   main.animated.fadeIn.mx-auto.max-w-200.p-4
@@ -19,6 +17,3 @@ block main
         span.ml-6 =&gt; for build: &gt;&gt;<code>pnpm build</code>
       .text-right
         a(href="/post.html") read more ...
-
-block footer
-  include includes/footer.pug

@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"esbenp.prettier-vscode",
+		"EditorConfig.EditorConfig",
+		"dbaeumer.vscode-eslint",
+		"mblode.twig-language-2",
+		"stylelint.vscode-stylelint"
+	]
+}

@@ -1,13 +1,14 @@
 /* base.css */
 @import "tailwindcss";
-
+@source "../includes";
+@source "../layouts";
 @variant dark (&:where(.dark, .dark *));
 
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --default-font-family: ps-inter, sans-serif;
-  --default-mono-font-family: ps-jetbrainsmono, monospace;
+  --default-font-family: psinter, sans-serif;
+  --default-mono-font-family: psjbmono, monospace;
   --color-accent: var(--color-blue-500);
   --color-dark: var(--color-zinc-900);
 }
@@ -35,6 +36,6 @@
   }
 
   a {
-    @apply font-medium dark:text-white;
+    @apply text-accent font-medium;
   }
 }

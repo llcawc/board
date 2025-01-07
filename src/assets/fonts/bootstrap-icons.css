@@ -35,3 +35,7 @@
 .bi-house::before {
   content: "\f425";
 }
+
+.bi-vector-pen::before {
+  content: "\F604";
+}

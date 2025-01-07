@@ -1,54 +1,54 @@
-# Board - starter template for the front-end
+# Board - стартовый шаблон front-end
 
-_Version 0.0.5 Date 24.12.25_
+_Version 0.0.6 Date 25.01.07_
 
-Starter uses Gulp as dependencies for front-end's works. For multi page development used PUG templating language. On board: [PUG](https://pugjs.org/api/getting-started.html) Templates, [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) and import suntax on base [PostCSS](https://github.com/postcss/postcss) witch Autoprefixer and minify plugins. Also used [Rollup](https://github.com/rollup/rollup) witch JSON plugins. Minify scripts: [Terser](https://github.com/terser/terser). Minify image: [Imagemin](https://github.com/imagemin/imagemin). Added a gulp script that allows you to embed the script and style in html.
+Board использует Vite и плагин Vituum в качестве обработчика front-end. Для многостраничной разработки используется язык шаблонов [PUG](https://pugjs.org/api/getting-started.html) и стили [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) 4-й версии. Для предварительной обработки шрифтов и изображений используется Gulp.
 
-## Getting started
+## Предварительная подготовка
 
-Install the [node](https://nodejs.org) and the npm package manager, clone this repository in project folder and type this command into the wsl or mac terminal:
-
-```
-npm install
-```
-
-Default directory:
-
-- For development source files: `src`,
-- For server and production: `dist` (will be created after run "dev" or "build")
-
-## Commands
-
-### Develop, watching files and live server reload.
-
-_You can open this in any browser: `http://localhost:3000`_
+Надо инсталировать зависимости NodeJS
 
 ```
-npm run dev
+pnpm install
 ```
 
-### Building files for production.
+Директории для работы:
+
+- Для исходного кода: `src` и `public`,
+- Для скомпилированного кода: `dist` (папка будет создана после запуска команды "build")
+
+## Команды
+
+### Разработка и просмотр в браузере с живой перезагрузкой на базе Vite.
+
+_Адрес сервера разработки: `http://localhost:8080`_
 
 ```
-npm run build
+pnpm dev
 ```
 
-### Run server (if folder "dist" exist :) in browser.
+### Сборка для производственной среды.
 
 ```
-npm run serve
+pnpm build
 ```
 
-### Start inline gulp task to embed the script and style in html.
+### Запуск производственного кода на сервере.
 
 ```
-npm run inline
+pnpm serve
 ```
 
-## Settings
+### Запуск заданий gulp для подготовки изображений и скриптов.
 
-Use `gulpfile.js`, `package.json` and config files for change settings.
+```
+pnpm prep
+```
+
+## Настройки и опции
+
+Смотреть `package.json` и файлы конфигурации.
 
 ---
 
-MIT License. ©2024 pasmurno by [llcawc](https://github.com/llcawc). Made with <span style="color:red;">❤</span> to beautiful architecture
+MIT License ©2025 pasmurno из [llcawc](https://github.com/llcawc). Сделано <span style="color:red;">❤</span> прекрасной архитектуре.

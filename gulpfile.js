@@ -1,10 +1,12 @@
-// gulpfile.js • soon • pasmurno by llcawc • https://github.com/llcawc
+// gulpfile.js • board • pasmurno by llcawc • https://github.com/llcawc
 
 // import modules
 import { deleteAsync as del } from 'del'
 import gulp from 'gulp'
 import changed from 'gulp-changed'
 import imagemin from 'gulp-img'
+import replace from 'gulp-replace'
+import { readFileSync } from 'node:fs'
 const { src, dest, parallel, series /*, watch */ } = gulp
 
 // images task
@@ -32,5 +34,35 @@ function clean() {
   return del(['public/assets/*', '!public/assets', '!public/assets/images'])
 }
 
-export { clean, copy, images }
+// inline scripts
+function inlinescripts() {
+  return src('dist/*.html', { base: 'dist' })
+    .pipe(
+      replace(/<script type="module" crossorigin src="\/assets\/js\/main.js"><\/script>/, () => {
+        const script = readFileSync('dist/assets/js/main.js', 'utf8')
+        return '<script>' + script + '</script>'
+      })
+    )
+    .pipe(dest('dist'))
+}
+
+// inline styles
+function inlinestyles() {
+  return src('dist/*.html', { base: 'dist' })
+    .pipe(
+      replace(/<link rel="stylesheet" crossorigin href="\/assets\/css\/main.css">/, () => {
+        const style = readFileSync('dist/assets/css/main.css', 'utf8')
+        return '<style>' + style + '</style>'
+      })
+    )
+    .pipe(dest('dist'))
+}
+
+// postclean task
+function postclean() {
+  return del(['dist/assets/js', 'dist/assets/css'])
+}
+
+export { clean, copy, images, inlinescripts, inlinestyles, postclean }
 export const assets = series(clean, parallel(copy, images))
+export const inline = series(inlinescripts, inlinestyles, postclean)

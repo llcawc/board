@@ -1,7 +1,6 @@
-extends ../layouts/main.pug
+extends ../layouts/main
 
-block variables
-  - const title = "Error 404";
+block prepend variables
   - const page = "404";
 
 block header
@@ -9,12 +8,13 @@ block header
 
 block main
   main.container.mx-auto.flex.items-center.justify-center
-    section.mb-20(class="sm:w-80")
+    section.mb-6(class="sm:w-80 md:mb-10 xl:mb-16")
       .flex.gap-x-4(dark:text-white)
         h1.animated.fadeIn.mb-0.text-5xl <i class="bi bi-bell"></i>
         .info
           h1.animated.fadeIn.mb-0 Error 404!
           p.animated.fadeIn.mb-4 Document not found.
+            | =page
           a.block(class="hover:no-underline", href="/")
             button.text-accent.border-accent.animated.fadeIn.slow.block.cursor-pointer.rounded-md.border.px-4.py-2.transition(
               class="hover:bg-accent hover:text-white active:translate-y-0.5"

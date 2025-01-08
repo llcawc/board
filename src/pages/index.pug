@@ -1,9 +1,7 @@
-extends ../layouts/main.pug
+extends ../layouts/main
 
-block variables
-  - const title = "Home";
+block prepend variables
   - const page = "index";
-  - const pageHeader = "Board Starter";
 
 block main
   main.animated.fadeIn.mx-auto.max-w-200.p-4

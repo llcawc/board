@@ -6,22 +6,15 @@ header.relative.flex.h-48.items-center
     )
   .container.mx-auto.px-4.text-center.text-white
     h1.animated.fadeIn.drop-shadow
-      if title==='Home'
-        span
-          i.bi.bi-house.mr-3
-          | #{ pageHeader }
-      else if page==='post'
-        span
-          i.bi.bi-vector-pen.mr-3
-          | #{ pageHeader }
-      else
-        span= pageHeader
-    nav.drop-shadow(class="hover:text-white")
+      span
+        i.bi.mr-3(class=icon)
+        | #{ header }
+    nav.drop-shadow
       ul.animated.fadeIn.flex.justify-center.gap-x-4
         each item in site.pages
           li
-            a.p-2.font-medium.text-blue-300.uppercase(
-              href="/" + item,
-              class="hover:underline hover:decoration-3 hover:underline-offset-4",
-              class=item === page ? "text-white font-semibold" : " underline-offset-4"
-            )= item
+            a.p-2.uppercase.underline-offset-4.decoration-3(
+              href="/" + item.page,
+              class="hover:underline",
+              class=item.page === page ? "text-white font-semibold" : "text-blue-300 font-medium"
+            )= item.title

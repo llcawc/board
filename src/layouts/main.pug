@@ -1,7 +1,8 @@
 block variables
-  - const title = "texttitle";
-  - const page = "textpage";
-  - const pageHeader = "textheader";
+  - const item = site.pages.find((p) => p.page === page);
+  - let title = item.title;
+  - let header = item.header;
+  - let icon = item.bi;
 
 doctype html
 html(lang="ru")
@@ -16,9 +17,9 @@ html(lang="ru")
   body.scheme-light-dark(class="dark:scheme-dark")
     .mx-auto.grid.h-screen.grid-cols-1.transition-opacity.duration-500(class="grid-rows-[2fr_8fr_2fr]")
       block header
-        include ../includes/header.pug
+        include ../includes/header
       block main
         main
           p It is default content in main section.
       block footer
-        include ../includes/footer.pug
+        include ../includes/footer

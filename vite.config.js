@@ -1,3 +1,4 @@
+/** @type {import('vite').UserConfig} */
 import tailwindcss from '@tailwindcss/vite'
 import pug from '@vituum/vite-plugin-pug'
 import { join, resolve } from 'node:path'

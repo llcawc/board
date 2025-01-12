@@ -7,8 +7,8 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --default-font-family: psinter, sans-serif;
-  --default-mono-font-family: psjbmono, monospace;
+  --default-font-family: "psinter", sans-serif;
+  --default-mono-font-family: "psjbmono", monospace;
   --color-accent: var(--color-blue-500);
   --color-dark: var(--color-zinc-900);
 }

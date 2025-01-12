@@ -1,5 +1,4 @@
 /* animate.css */
-
 /* https://github.com/animate-css/animate.css/ */
 
 @layer base {
@@ -81,7 +80,6 @@
   }
 
   /* fadeIn */
-
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -97,7 +95,6 @@
   }
 
   /* fadeInUp */
-
   @keyframes fadeInUp {
     from {
       opacity: 0;

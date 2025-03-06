@@ -23,11 +23,7 @@ export default {
     assetsInlineLimit: 0,
     modulePreload: false,
     rollupOptions: {
-      input: [
-        './src/pages/**/*.{json,pug,html}',
-        '!./src/pages/**/*.pug.json',
-        './src/scripts/*.{js,ts,mjs}',
-      ],
+      input: ['./src/pages/**/*.{json,pug,html}', '!./src/**/*.pug.json'],
       output: {
         entryFileNames: 'assets/js/[name].js',
         chunkFileNames: 'assets/js/[name].js',

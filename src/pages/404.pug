@@ -7,19 +7,18 @@ block header
   header
 
 block main
-  main.container.mx-auto.flex.items-center.justify-center
-    section.mb-6(class="sm:w-80 md:mb-10 xl:mb-16")
-      .flex.gap-x-4(dark:text-white)
-        h1.animated.fadeIn.mb-0.text-5xl <i class="bi bi-bell"></i>
-        .info
-          h1.animated.fadeIn.mb-0 Error 404!
-          p.animated.fadeIn.mb-4 Document not found.
-            | =page
-          a.block(class="hover:no-underline", href="/")
-            button.text-accent.border-accent.animated.fadeIn.slow.block.cursor-pointer.rounded-md.border.px-4.py-2.transition(
-              class="hover:bg-accent hover:text-white active:translate-y-0.5"
+  main(class="container mx-auto flex items-center justify-center")
+    section(class="sm:w-80 mb-6 md:mb-10 xl:mb-16")
+      div(class="dark:text-white flex gap-x-4")
+        h1(class=" animated fadeInmb-0 text-5xl")
+          i.bi.bi-bell
+        div(class="info")
+          h1(class="animated fadeIn mb-0") Error 404!
+          p(class="animated fadeIn mb-4") Document "#{page}" not found
+          a(class="block hover:no-underline" href="/")
+            button(class="text-accent border-accent animated fadeIn slow block cursor-pointer rounded-md border px-4 py-2 transition hover:bg-accent hover:text-white active:translate-y-0.5"
             )
-              span.font-normal HOME
+              span(class="font-normal") HOME
 
 block footer
   footer

@@ -5,8 +5,8 @@
  */
 
 @font-face {
-  font-display: block;
   font-family: "bootstrap-icons";
+  font-display: block;
   src:
     url("/assets/fonts/bootstrap-icons.woff2?24e3eb84d0bcaf83d77f904c78ac1f47") format("woff2"),
     url("/assets/fonts/bootstrap-icons.woff?24e3eb84d0bcaf83d77f904c78ac1f47") format("woff");
@@ -16,15 +16,16 @@
 [class^="bi-"]::before,
 [class*=" bi-"]::before {
   display: inline-block;
+
   font-family: "bootstrap-icons", fantasy !important;
-  font-style: normal;
   font-weight: normal !important;
+  font-style: normal;
   font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  vertical-align: -0.125em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  text-transform: none;
+  vertical-align: -0.125em;
 }
 
 /* I only include what I need */

@@ -1,5 +1,5 @@
 /* main.css */
-@import "./base.css";
-@import "./fonts.css";
-@import "./animate.css";
-@import "./colormode.css";
+@import "./blocks/base.css";
+@import "./blocks/fonts.css";
+@import "./blocks/animate.css";
+@import "./blocks/colormode.css";

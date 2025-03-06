@@ -9,13 +9,13 @@ html(lang="ru")
   head
     title Board • #{ title }
     meta(charset="utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    link(rel="shortcut icon", href="/assets/images/favicon.ico", type="image/x-icon")
-    link(rel="shortcut icon", href="/assets/images/favicon.svg", type="image/svg+xml")
-    meta(property="og:image", content="/assets/images/ice.jpg")
-    script(type="module", src="/src/scripts/main.ts")
-  body.scheme-light-dark(class="dark:scheme-dark")
-    .mx-auto.grid.h-screen.grid-cols-1.transition-opacity.duration-500(class="grid-rows-[2fr_8fr_2fr]")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon")
+    link(rel="shortcut icon" href="/assets/images/favicon.svg" type="image/svg+xml")
+    meta(property="og:image" content="/assets/images/ice.jpg")
+    script(type="module" src="/src/scripts/main.ts")
+  body(class="dark:scheme-dark scheme-light-dark")
+    div(class="grid-rows-[2fr_8fr_2fr] mx-auto grid h-screen grid-cols-1 transition-opacity duration-500")
       block header
         include ../includes/header
       block main

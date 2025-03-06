@@ -1,12 +1,12 @@
 // gulpfile.js • board • pasmurno by llcawc • https://github.com/llcawc
 
 // import modules
-import { deleteAsync as del } from 'del'
+import { deleteAsync } from 'del'
 import gulp from 'gulp'
 import changed from 'gulp-changed'
-import imagemin from 'gulp-img'
 import replace from 'gulp-replace'
 import { readFileSync } from 'node:fs'
+import imagemin from 'psimage'
 const { src, dest, parallel, series /*, watch */ } = gulp
 
 // images task
@@ -30,8 +30,8 @@ function copy() {
 }
 
 // clean task
-function clean() {
-  return del(['public/assets/*', '!public/assets', '!public/assets/images'])
+async function clean() {
+  return await deleteAsync(['public/assets/*', '!public/assets', '!public/assets/images'])
 }
 
 // inline scripts
@@ -59,8 +59,8 @@ function inlinestyles() {
 }
 
 // postclean task
-function postclean() {
-  return del(['dist/assets/js', 'dist/assets/css'])
+async function postclean() {
+  return await deleteAsync(['dist/assets/js', 'dist/assets/css'])
 }
 
 export { clean, copy, images, inlinescripts, inlinestyles, postclean }

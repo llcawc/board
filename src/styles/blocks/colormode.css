@@ -1,0 +1,94 @@
+@layer base {
+  :root {
+    --cm-color: #fd0;
+    --cm-bg: transparent;
+    --cm-hover: #222;
+    --cm-focus: transparent;
+  }
+
+  .dark {
+    --cm-color: #fff;
+    --cm-bg: transparent;
+    --cm-hover: #444;
+    --cm-focus: transparent;
+  }
+}
+
+@layer switcher {
+  .color-switcher {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+
+    margin: 0;
+    padding: 0;
+
+    line-height: 0.8;
+  }
+
+  .color-switcher button {
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 6px;
+
+    background: var(--cm-bg);
+    box-shadow: none;
+
+    transition: 0.25s;
+  }
+
+  .color-switcher button:hover {
+    background: var(--cm-hover);
+  }
+
+  .color-switcher button:focus,
+  .color-switcher button:focus-visible {
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--cm-focus);
+  }
+
+  .color-switcher button svg {
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+
+    fill: var(--cm-color);
+  }
+  @media (width >= 480px) {
+    .color-switcher {
+      right: calc(50% - 220px);
+    }
+  }
+  @media (width >= 768px) {
+    .color-switcher {
+      right: calc(50% - 364px);
+    }
+  }
+  @media (width >= 1024px) {
+    .color-switcher {
+      right: calc(50% - 492px);
+    }
+  }
+  @media (width >= 1280px) {
+    .color-switcher {
+      right: calc(50% - 620px);
+    }
+  }
+}
+@layer utilities {
+  .hidden {
+    display: none !important;
+  }
+}

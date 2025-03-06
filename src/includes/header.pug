@@ -1,20 +1,17 @@
-header.relative.flex.h-48.items-center
-  .absolute.h-full.w-full.overflow-hidden.bg-gradient-to-r(class="from-sky-800/50 to-indigo-800/50")
-    img.relative.-z-1.h-full.w-full.object-cover.blur-xs(
-      src="/assets/images/ice.jpg",
-      alt="Images Cover"
-    )
-  .container.mx-auto.px-4.text-center.text-white
-    h1.animated.fadeIn.drop-shadow
+header(class="relative flex h-48 items-center")
+  div(class="from-sky-800/50 to-indigo-800/50 absolute h-full w-full overflow-hidden bg-gradient-to-r")
+    img(src="/assets/images/ice.jpg" alt="Images Cover" class="relative -z-1 h-full w-full object-cover blur-xs")
+  div(class="container mx-auto px-4 text-center text-white")
+    h1(class="animated fadeIn drop-shadow")
       span
-        i.bi.mr-3(class=icon)
+        i(class="mr-3 bi" class=icon)
         | #{ header }
-    nav.drop-shadow
-      ul.animated.fadeIn.flex.justify-center.gap-x-4
+    nav(class="drop-shadow")
+      ul(class="animated fadeIn flex justify-center gap-x-4")
         each item in site.pages
           li
-            a.p-2.uppercase.underline-offset-4.decoration-3(
+            a(
               href="/" + item.page,
-              class="hover:underline",
+              class="hover:underline p-2 uppercase underline-offset-4 decoration-3",
               class=item.page === page ? "text-white font-semibold" : "text-blue-300 font-medium"
             )= item.title

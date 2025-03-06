@@ -1,6 +1,6 @@
 # Board - стартовый шаблон front-end
 
-_Version 0.0.6 Date 25.01.07_
+_Version 0.0.7 Date 2025.03.06_
 
 Board использует Vite и плагин Vituum в качестве обработчика front-end. Для многостраничной разработки используется язык шаблонов [PUG](https://pugjs.org/api/getting-started.html) и стили [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) 4-й версии. Для предварительной обработки шрифтов и изображений используется Gulp.
 

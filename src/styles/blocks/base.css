@@ -1,7 +1,7 @@
 /* base.css */
 @import "tailwindcss";
-@source "../includes";
-@source "../layouts";
+@source "../../includes";
+@source "../../layouts";
 @variant dark (&:where(.dark, .dark *));
 
 @plugin "@tailwindcss/typography";

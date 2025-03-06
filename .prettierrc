@@ -2,23 +2,29 @@
   "tabWidth": 2,
   "useTabs": false,
   "endOfLine": "lf",
-  "printWidth": 100,
-  "trailingComma": "es5",
-  "bracketSpacing": true,
+  "printWidth": 120,
   "overrides": [
     {
       "files": ["./**/*.{ts,js,jsx,mjs,cjs}"],
       "options": {
         "semi": false,
         "singleQuote": true,
-        "jsxSingleQuote": true
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "plugins": ["prettier-plugin-embed", "prettier-plugin-organize-imports"]
+      }
+    },
+    {
+      "files": ["./**/*.css"],
+      "options": {
+        "plugins": ["prettier-plugin-tailwindcss"]
+      }
+    },
+    {
+      "files": ["tsconfig.json"],
+      "options": {
+        "parser": "jsonc"
       }
     }
-  ],
-  "plugins": [
-    "@prettier/plugin-pug",
-    "prettier-plugin-embed",
-    "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss"
   ]
 }

@@ -2,12 +2,11 @@
 
 // import modules
 import { deleteAsync } from 'del'
-import gulp from 'gulp'
+import { dest, parallel, series /*, watch */, src } from 'gulp'
 import changed from 'gulp-changed'
 import replace from 'gulp-replace'
 import { readFileSync } from 'node:fs'
 import imagemin from 'psimage'
-const { src, dest, parallel, series /*, watch */ } = gulp
 
 // images task
 function images() {

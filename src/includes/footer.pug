@@ -1,3 +1,10 @@
 footer(class="delay-1s container mx-auto self-end px-4")
   hr(class="mb-3 border-zinc-800")
-  p(class="mb-4 text-center") Copyright&nbsp;&copy;#[span= new Date().getFullYear().toString()] #[a(href="https://github.com/llcawc") llcawc] by pasmurno, all rights reserved, made with #[span(class="text-red-600") ❤] to beautiful architecture.
+  div(class="flex justify-between mb-4")
+    fieldset(class="switcher")
+      legend(class="switcher__legend") Схема
+      input(class="switcher__radio switcher__radio--auto" type="radio" name="color-scheme" value="auto" aria-label="Системная" checked)
+      input(class="switcher__radio switcher__radio--light" type="radio" name="color-scheme" value="light" aria-label="Светлая")
+      input(class="switcher__radio switcher__radio--dark" type="radio" name="color-scheme" value="dark" aria-label="Тёмная")
+      div(class="switcher__status")
+    p(class="text-center") Copyright&nbsp;&copy;#[span= new Date().getFullYear().toString()] #[a(href="https://github.com/llcawc") llcawc] by pasmurno, all rights reserved, made with #[span(class="text-red-600") ❤] to beautiful architecture.

@@ -1,1 +1,1 @@
-export { default as colormode } from './colormode.ts'
+import './scheme.ts'

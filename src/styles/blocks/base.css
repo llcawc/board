@@ -4,8 +4,6 @@
 @source "../../layouts";
 @variant dark (&:where(.dark, .dark *));
 
-@plugin "@tailwindcss/typography";
-
 @theme {
   --default-font-family: "psinter", sans-serif;
   --default-mono-font-family: "psjbmono", monospace;

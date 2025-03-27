@@ -2,4 +2,5 @@
 @import "./blocks/base.css";
 @import "./blocks/fonts.css";
 @import "./blocks/animate.css";
-@import "./blocks/colormode.css";
+@import "./blocks/scheme.css";
+/* @import "./blocks/colormode.css"; */

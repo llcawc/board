@@ -3,10 +3,6 @@
 /.osp/
 /dist/
 /node_modules/
-/**/debug.log
-/**/yarn.lock
-/**/pnpm-lock.yaml
-/**/package-lock.json
 
 # Config files
 /**/.env
@@ -17,20 +13,10 @@
 /**/*.zip
 /**/*.7z
 
-# iMac cash files
+# iMac
 /**/*.DS_Store
 
-# Windows thumbnail cache files
+# Windows
 /**/Thumbs.db
-/**/Thumbs.db:encryptable
-/**/ehthumbs.db
-/**/ehthumbs_vista.db
-
-# Dump file
-/**/*.stackdump
-
-# Folder config file
 /**/[Dd]esktop.ini
-
-# Windows shortcuts
 /**/*.lnk

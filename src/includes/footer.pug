@@ -1,10 +1,6 @@
 footer(class="delay-1s container mx-auto self-end px-4")
-  hr(class="mb-3 border-zinc-800")
-  div(class="flex justify-between mb-4")
-    fieldset(class="switcher")
-      legend(class="switcher__legend") Схема
-      input(class="switcher__radio switcher__radio--auto" type="radio" name="color-scheme" value="auto" aria-label="Системная" checked)
-      input(class="switcher__radio switcher__radio--light" type="radio" name="color-scheme" value="light" aria-label="Светлая")
-      input(class="switcher__radio switcher__radio--dark" type="radio" name="color-scheme" value="dark" aria-label="Тёмная")
-      div(class="switcher__status")
-    p(class="text-center") Copyright&nbsp;&copy;#[span= new Date().getFullYear().toString()] #[a(href="https://github.com/llcawc") llcawc] by pasmurno, all rights reserved, made with #[span(class="text-red-600") ❤] to beautiful architecture.
+  hr(class="my-4 border-zinc-400 dark:border-zinc-700")
+  div(class="flex mb-4 flex-col gap-3 justify-between lg:items-center lg:flex-row")
+    //- insert color scheme switcher
+    include ../includes/scheme
+    p Copyright&nbsp;&copy;#[span= new Date().getFullYear().toString()] #[a(href="https://github.com/llcawc") llcawc] by pasmurno, all rights reserved, made with #[span(class="text-red-600") ❤] to beautiful architecture.

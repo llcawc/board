@@ -17,7 +17,7 @@ function images() {
 }
 
 // copy font task
-function copy() {
+function fonts() {
   return src(
     [
       'src/assets/fonts/bootstrap-icons/*.woff*',
@@ -30,7 +30,7 @@ function copy() {
 
 // clean task
 async function clean() {
-  return await deleteAsync(['public/assets/*', '!public/assets', '!public/assets/images'])
+  await deleteAsync(['dist', 'public'])
 }
 
 // inline scripts
@@ -62,6 +62,6 @@ async function postclean() {
   return await deleteAsync(['dist/assets/js', 'dist/assets/css'])
 }
 
-export { clean, copy, images, inlinescripts, inlinestyles, postclean }
-export const assets = series(clean, parallel(copy, images))
+export { clean, fonts, images, inlinescripts, inlinestyles, postclean }
+export const assets = series(clean, parallel(fonts, images))
 export const inline = series(inlinescripts, inlinestyles, postclean)

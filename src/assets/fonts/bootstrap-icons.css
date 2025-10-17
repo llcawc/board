@@ -1,5 +1,5 @@
 /*!
- * Bootstrap Icons v1.11.3 (https://icons.getbootstrap.com/)
+ * Bootstrap Icons v1.13.1 (https://icons.getbootstrap.com/)
  * Copyright 2019-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
  */
@@ -7,9 +7,8 @@
 @font-face {
   font-family: "bootstrap-icons";
   font-display: block;
-  src:
-    url("/assets/fonts/bootstrap-icons.woff2?24e3eb84d0bcaf83d77f904c78ac1f47") format("woff2"),
-    url("/assets/fonts/bootstrap-icons.woff?24e3eb84d0bcaf83d77f904c78ac1f47") format("woff");
+  src: url("/assets/fonts/bootstrap-icons.woff2?e34853135f9e39acf64315236852cd5a") format("woff2"),
+       url("/assets/fonts/bootstrap-icons.woff?e34853135f9e39acf64315236852cd5a") format("woff");
 }
 
 .bi::before,
@@ -25,7 +24,7 @@
   -moz-osx-font-smoothing: grayscale;
   line-height: 1;
   text-transform: none;
-  vertical-align: -0.125em;
+  vertical-align: -.125em;
 }
 
 /* I only include what I need */

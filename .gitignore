@@ -1,18 +1,14 @@
 # Node & project folders
 /.git/
 /.osp/
+/coverage/
 /dist/
 /node_modules/
-/coverage/
 
 # Config files
 /**/.env
 /**/.env.*.php
 /**/.env.php
-/.prettierignore
-/.prettierrc
-/.stylelintignore
-/.stylelintrc.*
 
 # archive package
 /**/*.zip

@@ -1,4 +1,8 @@
 # Ignore files:
 dist/**/*.*
 vendor/**/*.*
+coverage/**/*.*
+src/test/**/*.*
+src/**/+.*
 src/**/*.css
+**/pnpm-lock.yaml

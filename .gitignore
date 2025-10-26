@@ -3,11 +3,16 @@
 /.osp/
 /dist/
 /node_modules/
+/coverage/
 
 # Config files
 /**/.env
 /**/.env.*.php
 /**/.env.php
+/.prettierignore
+/.prettierrc
+/.stylelintignore
+/.stylelintrc.*
 
 # archive package
 /**/*.zip

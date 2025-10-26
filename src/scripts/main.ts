@@ -1,4 +1,5 @@
 // main.js
-
 import '../styles/main.css'
-import './blocks/scheme'
+import { schemeSwitcher } from './blocks/scheme.js'
+// установка скрипта после полной загрузки страницы
+window.addEventListener('DOMContentLoaded', schemeSwitcher)

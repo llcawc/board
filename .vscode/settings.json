@@ -7,23 +7,31 @@
   "explorer.fileNesting.patterns": {
     "tsconfig.json": "tsconfig.*.json, env.d.ts",
     "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
-    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, .stylelin*"
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, .stylelin*, biom*"
   },
 
-  "files.associations": {
-    "*.pcss": "scss"
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
-  "emmet.includeLanguages": {
-    "postcss": "scss"
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
-  "vsicons.associations.files": [{ "icon": "postcss", "extensions": ["pcss"], "format": "svg" }],
-  "vsicons.associations.folders": [{ "icon": "style", "extensions": ["pcss"], "format": "svg", "overrides": "pcss" }],
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
 
-  "stylelint.configFile": ".stylelintrc.json",
-
-  "stylelint.validate": ["scss", "css", "postcss"],
-  "eslint.validate": ["typescript", "javascript"],
-  "eslint.enable": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": "explicit",
     "source.fixAll.eslint": "explicit"

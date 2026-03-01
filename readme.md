@@ -1,46 +1,46 @@
-# Board - стартовый шаблон front-end
+# Board - Front-end Starter Template
 
-Board использует Vite и плагин Vituum в качестве обработчика front-end. Для многостраничной разработки используется язык шаблонов [PUG](https://pugjs.org/api/getting-started.html) и стили [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) 4-й версии. Для предварительной обработки шрифтов и изображений используется Gulp.
+Board uses Vite and the Vituum plugin as the front-end handler. For multi-page development, the [PUG](https://pugjs.org/api/getting-started.html) template language and [TailwindCSS](https://github.com/tailwindlabs/tailwindcss) version 4 styles are used. Gulp is used for preprocessing fonts and images.
 
-## Предварительная подготовка
+## Prerequisites
 
-Надо инсталировать зависимости NodeJS
+NodeJS dependencies need to be installed:
 
 ```
 pnpm install
 ```
 
-Директории для работы:
+Working directories:
 
-- Для исходного кода: `src` и `public`,
-- Для скомпилированного кода: `dist` (папка будет создана после запуска команды "build")
+- For source code: `src` and `public`
+- For compiled code: `dist` (folder will be created after running the "build" command)
 
-## Команды
+## Commands
 
-### Разработка и просмотр в браузере с живой перезагрузкой на базе Vite.
+### Development and preview in browser with live reload based on Vite
 
-_Адрес сервера разработки: `http://localhost:8080`_
+_Development server address: `http://localhost:8080`_
 
 ```
 pnpm dev
 ```
 
-### Сборка для производственной среды.
+### Build for production environment
 
 ```
 pnpm build
 ```
 
-### Запуск производственного кода на сервере.
+### Run production code on server
 
 ```
 pnpm serve
 ```
 
-## Настройки и опции
+## Settings and Options
 
-Смотреть `package.json` и файлы конфигурации.
+See `package.json` and configuration files.
 
 ---
 
-MIT License ©2025 pasmurno из [llcawc](https://github.com/llcawc). Сделано <span style="color:red;">❤</span> прекрасной архитектуре.
+MIT License ©2026 pasmurno from [llcawc](https://github.com/llcawc). Made with <span style="color:red;">❤</span> for beautiful architecture.

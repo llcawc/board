@@ -2,7 +2,8 @@
 @import "tailwindcss";
 @source "../../includes";
 @source "../../layouts";
-@variant dark (&:where(.dark, .dark *));
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --default-font-family: "psinter", sans-serif;

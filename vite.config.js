@@ -1,9 +1,11 @@
 /** @type {import('vite').UserConfig} */
+
+import { join, resolve } from 'node:path'
 import tailwindcss from '@tailwindcss/vite'
 import pug from '@vituum/vite-plugin-pug'
-import { join, resolve } from 'node:path'
 import vituum from 'vituum'
 import dataSite from './src/data/site'
+
 const __dirname = resolve()
 
 export default {

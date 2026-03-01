@@ -1,11 +1,11 @@
 // gulpfile.js • board • pasmurno by llcawc • https://github.com/llcawc
 
 // import modules
+import { readFileSync } from 'node:fs'
 import { deleteAsync } from 'del'
 import { dest, parallel, series /*, watch */, src } from 'gulp'
 import changed from 'gulp-changed'
 import replace from 'gulp-replace'
-import { readFileSync } from 'node:fs'
 import imagemin from 'psimage'
 
 // images task
@@ -24,7 +24,7 @@ function fonts() {
       'src/assets/fonts/Inter/*.woff*',
       'src/assets/fonts/Jetbrains/*.woff*',
     ],
-    { encoding: false }
+    { encoding: false },
   ).pipe(dest('public/assets/fonts'))
 }
 
@@ -39,8 +39,8 @@ function inlinescripts() {
     .pipe(
       replace(/<script type="module" crossorigin src="\/assets\/js\/main.js"><\/script>/, () => {
         const script = readFileSync('dist/assets/js/main.js', 'utf8')
-        return '<script>' + script + '</script>'
-      })
+        return `<script>${script}</script>`
+      }),
     )
     .pipe(dest('dist'))
 }
@@ -51,8 +51,8 @@ function inlinestyles() {
     .pipe(
       replace(/<link rel="stylesheet" crossorigin href="\/assets\/css\/main.css">/, () => {
         const style = readFileSync('dist/assets/css/main.css', 'utf8')
-        return '<style>' + style + '</style>'
-      })
+        return `<style>${style}</style>`
+      }),
     )
     .pipe(dest('dist'))
 }

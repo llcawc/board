@@ -1,5 +1,6 @@
 # Node & project folders
 /.git/
+/.codeassistant/
 /.osp/
 /coverage/
 /dist/

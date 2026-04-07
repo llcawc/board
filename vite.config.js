@@ -1,14 +1,14 @@
-/** @type {import('vite').UserConfig} */
-
-import { join, resolve } from 'node:path'
+import { join } from 'node:path'
+import { cwd } from 'node:process'
 import tailwindcss from '@tailwindcss/vite'
 import pug from '@vituum/vite-plugin-pug'
+import { defineConfig } from 'vite'
 import vituum from 'vituum'
 import dataSite from './src/data/site'
 
-const __dirname = resolve()
+const __dirname = cwd()
 
-export default {
+export default defineConfig({
   publicDir: join(__dirname, 'public'),
   plugins: [
     tailwindcss(),
@@ -36,10 +36,10 @@ export default {
   server: {
     port: 8080,
   },
-}
+})
 
 function getFileName(assetInfo) {
-  let extType = assetInfo.name.split('.').pop()
+  let extType = assetInfo.names[0].split('.').pop() ?? 'file.txt'
   if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
     extType = 'images'
   }

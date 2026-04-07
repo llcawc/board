@@ -1,0 +1,6 @@
+allowBuilds:
+  cwebp-bin: true
+  gifsicle: true
+  mozjpeg: true
+  optipng-bin: true
+  sharp: true
